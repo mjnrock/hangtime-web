@@ -1,0 +1,21 @@
+html,
+body {
+	background-color: #ddd;
+	height: 100%;
+	margin: 0;
+}
+
+.ht-container {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	overflow: hidden;
+}
+
+.ht-card {
+	border-radius: 5px;
+	background-color: #999;
+	min-width: 90%;
+}
