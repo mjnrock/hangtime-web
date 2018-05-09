@@ -3,19 +3,18 @@ body {
 	background-color: #ddd;
 	height: 100%;
 	margin: 0;
+	overflow: hidden;
+	touch-action: none;
 }
 
 .ht-container {
 	position: absolute;
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: space-evenly;
-	overflow: hidden;
+	width: 10000px;
+	height: 10000px;
 }
 
 .ht-card {
+	position: absolute;
 	border-radius: 5px;
 	background-color: #999;
-	min-width: 90%;
 }
