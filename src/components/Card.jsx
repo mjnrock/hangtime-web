@@ -16,7 +16,10 @@ export class Card extends Component {
 
 		return (
 			<section
-				className="ht-card"
+				ht-card="1"
+				className="shadow-4"
+				ht-x={ this.props["ht-x"] }
+				ht-y={ this.props["ht-y"] }
 				style={{
 					width: this.config.width,
 					height: this.config.height,
@@ -24,7 +27,7 @@ export class Card extends Component {
 					left: pos.x
 				}}
 			>
-				{ this.props["ht-title"] }
+				<span ht-title="1">{ this.props["ht-title"] }</span>
 			</section>
 		);
 	}
