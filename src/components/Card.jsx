@@ -15,7 +15,7 @@ export class Card extends Component {
 		let pos = this.props.calcPos(this.props["ht-x"], this.props["ht-y"]);
 
 		return (
-			<section
+			<div
 				ht-card="1"
 				className="shadow-4"
 				ht-x={ this.props["ht-x"] }
@@ -28,7 +28,7 @@ export class Card extends Component {
 				}}
 			>
 				<span ht-title="1">{ this.props["ht-title"] }</span>
-			</section>
+			</div>
 		);
 	}
 }
