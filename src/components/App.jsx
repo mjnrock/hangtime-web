@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import * as Messages from "../actions/Messages";
-import { Deck } from "./Deck";
+import { Deck } from "./cards/Deck";
 
 class App extends Component {
 	render() {
 		return (
-			<main ht-container="1">
+			<main ht="container">
 				<Deck />
 			</main>
 		);

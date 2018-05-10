@@ -17,7 +17,7 @@ export class Card extends Component {
 		return (
 			<div
 				ht-card="1"
-				className="shadow-4"
+				className="shadow-3"
 				ht-x={ this.props["ht-x"] }
 				ht-y={ this.props["ht-y"] }
 				style={{
@@ -27,7 +27,7 @@ export class Card extends Component {
 					left: pos.x
 				}}
 			>
-				<span ht-title="1">{ this.props["ht-title"] }</span>
+				<span ht-content="1">{ this.props["ht-content"] }</span>
 			</div>
 		);
 	}

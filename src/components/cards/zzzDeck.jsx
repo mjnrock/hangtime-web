@@ -84,6 +84,11 @@ export class Deck extends Component {
 					ht-x={ x }
 					ht-y={ y }
 					ht-title={ `${x},${y}` }
+					ht-content={ `${x},${y}` }
+
+					//	Enable/Disable Horizontal (ht-nav-h) or Vertical (ht-nav-v) navigation
+					ht-nav-h="true"
+					ht-nav-v="false"
 				/>
 			);
 		});
