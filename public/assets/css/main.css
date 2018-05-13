@@ -1,37 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
 html,
 body {
-	background-color: #ddd;
-	height: 100%;
-	margin: 0;
-	overflow: hidden;
-	touch-action: none;
+	font-family: Roboto;
+	font-weight: 300;
 }
 
-main[ht~=container] {
-	position: absolute;
-	width: 10000px;
-	height: 10000px;
+*[ht~=decal] {
+	border-radius: 2px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	width: 250px;
+	height: 250px;
 }
 
-section[ht~=deck] {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-}
-
-div[ht~=card] {
-	position: absolute;
-	border-radius: 4px;
-	background-color: rgba(255, 255, 255, 0.8);
-	border: 1px solid rgba(0, 0, 0, 0.15);
-}
-div[ht~=card] > span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 30%;
-    width: 50%;
-	margin: -15% 0 0 -25%;
+*[ht~=decal][ht-t~=metric] *[ht~=metric-content] {
+	margin: 0 auto;
 	text-align: center;
-	font-size: 64pt;
+}
+*[ht~=decal][ht-t~=metric] *[ht~=metric-value] {
+	font-size: 36px;
+}
+
+*[ht~=decal][ht-t~=metric] *[ht~=metric-icon],
+*[ht~=decal][ht-t~=metric] *[ht~=metric-unit] {
+	font-size: 10px !important;
+	color: #BDBDBD !important;
+	padding: 0 3px;
 }

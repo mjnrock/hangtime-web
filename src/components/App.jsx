@@ -2,13 +2,19 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import * as Messages from "../actions/Messages";
-import { Deck } from "./cards/Deck";
+import Deck from "./deck";
+
+console.log(Deck);
 
 class App extends Component {
 	render() {
 		return (
 			<main ht="container">
-				<Deck />
+				<Deck.DecalMetric
+					value={ 8.5 }
+					unit={ `mi` }
+					icon={ `tune` }
+				/>
 			</main>
 		);
 	}
