@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
 export class Card extends Component {
+	componentDidMount() {
+		this.props.init(this);
+	}
+
 	render() {
-		let size = this.props.GetSize(this),
-			pos = this.props.GetPosition(this);
+		let size = this.props.calcSize(this),
+			pos = this.props.calcPosition(this);
 
 		return (
 			<div
@@ -21,9 +25,13 @@ export class Card extends Component {
 				}}
 			>
 				{
-					this.props.children
+					this.props["content"]
 				}
 			</div>
 		);
+	}
+
+	testFn() {
+		return 4;
 	}
 }
