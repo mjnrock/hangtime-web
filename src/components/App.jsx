@@ -10,11 +10,23 @@ class App extends Component {
 	render() {
 		return (
 			<main ht="container">
-				<Deck.DecalMetric
-					value={ 8.5 }
-					unit={ `mi` }
-					icon={ `tune` }
-				/>
+				<Deck.Pane>
+					<Deck.DecalMetric
+						value={ `8.5` }
+						unit={ `mi` }
+						icon={ `directions_car` }
+					/>
+					<Deck.DecalMetric
+						value={ `5:30` }
+						unit={ `pm` }
+						icon={ `schedule` }
+					/>
+					<Deck.DecalMetric
+						value={ `3` }
+						unit={ `h` }
+						icon={ `hourglass_empty` }
+					/>
+				</Deck.Pane>
 			</main>
 		);
 	}
