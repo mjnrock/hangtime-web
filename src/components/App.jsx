@@ -10,15 +10,35 @@ class App extends Component {
 		return (
 			<main stax="container">
 				<StaxPax.Components.Card.Card>
-					This is a Card
 					<StaxPax.Components.Card.Segment.Options>
-						<StaxPax.Components.Card.Element.Button.JoinRequest />
-						<StaxPax.Components.Card.Element.Button.JoinRequest />
-						<StaxPax.Components.Card.Element.Button.JoinRequest />
-						<StaxPax.Components.Card.Element.Button.JoinRequest />
-						<StaxPax.Components.Card.Element.Button.JoinRequest />
-						<StaxPax.Components.Card.Element.Button.JoinRequest />
+						<StaxPax.Components.Card.Element.Pane type="f">
+							<StaxPax.Components.Card.Element.Button.JoinRequest />
+							<StaxPax.Components.Card.Element.Button.JoinRequest />
+							<StaxPax.Components.Card.Element.Button.JoinRequest />
+							<StaxPax.Components.Card.Element.Button.JoinRequest />
+							<StaxPax.Components.Card.Element.Button.JoinRequest />
+						</StaxPax.Components.Card.Element.Pane>
 					</StaxPax.Components.Card.Segment.Options>
+					
+					<StaxPax.Components.Card.Segment.Synopsis>
+						<StaxPax.Components.Card.Element.Pane type="p">
+							<img src="/assets/images/map.png" alt="map" />
+							
+						</StaxPax.Components.Card.Element.Pane>
+						<StaxPax.Components.Card.Element.Pane>
+							
+							<StaxPax.Components.Card.Element.Pane>
+								<img src="/assets/images/map.png" alt="map" />
+								
+							</StaxPax.Components.Card.Element.Pane>
+							
+							<StaxPax.Components.Card.Element.Pane>
+								<img src="/assets/images/map.png" alt="map" />
+								
+							</StaxPax.Components.Card.Element.Pane>
+							
+						</StaxPax.Components.Card.Element.Pane>
+					</StaxPax.Components.Card.Segment.Synopsis>
 				</StaxPax.Components.Card.Card>
 			</main>
 		);

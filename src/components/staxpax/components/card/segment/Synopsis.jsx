@@ -6,6 +6,7 @@ export class Synopsis extends Component {
 		return (
 			<div
 				stax="segment segment-synopsis"
+				pax="b br bs-p"
 				{ ...rest }
 			>
 			{

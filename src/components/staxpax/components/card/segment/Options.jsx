@@ -6,6 +6,7 @@ export class Options extends Component {
 		return (
 			<div
 				stax="segment segment-options"
+				pax="b br bs-p"
 				{ ...rest }
 			>
 			{
