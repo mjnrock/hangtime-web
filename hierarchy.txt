@@ -1,26 +1,30 @@
-- Plane
-	- Lattice
-		- Collection
-			- Card
-				- Pane
-					- Decal
-				
-- Card
-	= (Types)
-		- Static
-			- Full
-			- Half
-			- Double
-			- Extended
-		- Dynamic
-	= (Components)
-		- Panel
-			= (Types)
-				- Padded
-				- Full
-			= (Components)
-				- Block
-					= (Types) 
-						- Badge
-						- Metric
-				- Container
+- Board
+	"The navigable space in which Decks are held"
+	Components
+		- Domain
+			"A categorical grouping of similar or related components"		
+		- Deck
+			"An aggregation of Cards, usually within a similar Domain"
+			Components
+				- Anchor
+					"The 'definition' Card of a Deck, usually displaying an icon and/or descriptor"
+				- Stack
+					"The non-anchor Cards in a Deck"
+				- Card
+					"A functional collection of Segments"
+					Components
+						- Segment
+							"A sub-section of content or functionality for a Card"
+							Components
+								- Options
+								- Synopsis
+								- Detail
+						- Element
+							"A modular constituent piece of content for a Segment"
+							Components
+								- Pane
+									"A container into which card-components may be placed"
+								- Emblem
+									"A singleton content holder"
+								- Button
+									"A singleton action initiator"

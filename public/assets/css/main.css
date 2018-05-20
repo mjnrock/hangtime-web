@@ -6,24 +6,16 @@ body {
 	font-weight: 300;
 }
 
-*[ht~=decal] {
+/*	ELEMENTS	*/
+/*	PANE	*/
+*[stax~=pane] {
+	
+}
+
+/*	BUTTON	*/
+*[stax~=button] {
 	border-radius: 2px;
 	border: 1px solid rgba(0, 0, 0, 0.1);
-	width: 250px;
-	height: 250px;
-}
-
-*[ht~=decal][ht-t~=metric] *[ht~=metric-content] {
-	margin: 0 auto;
-	text-align: center;
-}
-*[ht~=decal][ht-t~=metric] *[ht~=metric-value] {
-	font-size: 36px;
-}
-
-*[ht~=decal][ht-t~=metric] *[ht~=metric-icon],
-*[ht~=decal][ht-t~=metric] *[ht~=metric-unit] {
-	font-size: 10px !important;
-	color: #BDBDBD !important;
-	padding: 0 3px;
+	width: 100%;
+	height: 40px;
 }
