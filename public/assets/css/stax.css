@@ -1,4 +1,10 @@
-*[stax~=container] {
+[stax] {
+	font-family: Roboto;
+	font-weight: 300;
+	color: #777;
+}
+
+[stax~=container] {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -12,29 +18,101 @@
 	text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.07);
 }
 
-*[stax~=card] {
+[stax~=card] {
 	margin: 5px;
 	width: calc(100% - 10px);
 	height: calc(100% - 10px);
 }
 
-*[stax~=segment] {
+[stax~=segment] {
 	margin-bottom: 5px;
 	background-color: #fff;
 }
+[stax~=segment] > [stax~=pane]:not(:only-child):not(:last-child),
+[stax~=pane] > [stax~=pane]:not(:only-child):not(:last-child) {
+	margin-bottom: 0px;
+}
+[stax~=pane] > *:not(:only-child):not(:last-child) {
+	margin-right: 0px;
+}
 
 /*	ELEMENTS	*/
+[stax~=element] {
+	margin: 2px;
+	padding: 4px;
+}
+
 /*	PANE	*/
-*[stax~=pane] {
+[stax~=pane] {
 	display: flex;
 	flex-wrap: wrap;
 }
-*[stax~=pane] > *:not(:only-child):not(:last-child) {
-	margin-bottom: 0;
+
+/*	EMBLEM	*/
+[stax~=emblem] {
+	margin: 5px;
+	padding: 6px;
+}
+/*	METRIC	*/
+[stax~=emblem][stax~=metric] {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+}
+[stax~=emblem][stax~=metric] > * {
+	justify-self: center;
+	align-self: center;
+}
+[stax~=emblem][stax~=metric] > span[stax~=value] {
+	grid-row: 1 / 5;
+	grid-column: 2 / 6;
+
+	font-size: 30pt;
+}
+[stax~=emblem][stax~=metric] > i[stax~=icon] {
+	grid-row: 5 / 7;
+	grid-column: 3 / 4;
+
+	font-size: 10pt;
+	color: #bdbdbd;
+}
+[stax~=emblem][stax~=metric] > span[stax~=unit] {
+	grid-row: 5 / 7;
+	grid-column: 4 / 5;
+
+	font-size: 10pt;
+	color: #bdbdbd;
 }
 
 /*	BUTTON	*/
-*[stax~=element] {
-	margin: 2px;
-	padding: 4px;
+[stax~=button] {
+	padding: 6px;
+}
+[stax~=button] > span {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+}
+[stax~=button] > span > i {
+	justify-self: center;
+	align-self: center;
+	grid-row: 1 / 5;
+	grid-column: 2 / 6;
+
+	font-size: 20pt;
+}
+[stax~=button] > span > span {
+	justify-self: center;
+	align-self: center;
+	grid-row: 5 / 7;
+	grid-column: 1 / 7;
+
+	padding: 0 3px;
+	font-size: 10pt;
+	letter-spacing: 3px;
+}
+
+
+[stax~=icon] {
+	font-size: 14pt;
 }

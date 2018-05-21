@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 
 import { Button } from "./Button";
 
-export class JoinRequest extends Component {
+export class Beep extends Component {
 	render() {
-		const { ...rest } = this.props;
+		const { pax, ...rest } = this.props;
 		return (
 			<Button
 				stax="element"
-				pax="flex-2"
-				icon="add"
-				text="Send Request"
+				pax={ `${pax}` }
+				icon="priority_high"
+				text="Beep"
 				onClick={ this.onClick }
 				{ ...rest }
 			/>

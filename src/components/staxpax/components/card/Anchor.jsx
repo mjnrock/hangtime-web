@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 import Helper from "../../Helper";
 
-export class Card extends Component {
+export class Anchor extends Component {
 	render() {
 		const { ...rest } = this.props;
 		return (
 			<div
-				stax="card"
+				stax="anchor"
 				onClick={ this.onClick.bind(this) }
 				{ ...rest }
 			/>

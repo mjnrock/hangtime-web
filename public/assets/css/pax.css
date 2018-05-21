@@ -1,21 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
-button {
-	background-color: rgba(255, 255, 255, 0.9);
+html,
+body {
+	font-family: Roboto !important;
+	font-weight: 300;
+	color: #777;
+}
 
+button {
 	text-align: center;
 	font-size: 12pt;
 	min-height: 60px;
-	color: #456FA8;
-	text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.07);
+	text-shadow: 0px 2px 1px rgba(29, 95, 162, 0.78);
 	
-	border: 1px solid #456FA8;
+	background-color: rgba(29, 95, 162, 0.78);
+	color: #fff;
+	border: 1px solid #ddd;
 	border-radius: 2px;
 }
 
 img {
 	width: 100%;
 	height: 100%;
+}
+
+*[pax~=segment] {
+	/* border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 2px;
+	box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15); */
 }
 
 *[pax~=pane-p] {
@@ -30,8 +42,11 @@ img {
 	flex-wrap: wrap;
 }
 
+*[pax~=flex-1] {
+	flex: 1 0 calc(90% - 4px);
+}
 *[pax~=flex-2] {
-	flex: 1 0 calc(50% - 4px);
+	flex: 1 0 calc(40% - 4px);
 }
 *[pax~=flex-3] {
 	flex: 1 0 calc(33% - 4px);
@@ -66,4 +81,61 @@ img {
 }
 *[pax~=bs-p] {
 	box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+
+*[pax~=--blue] {
+	color: #fff;
+	background-color: rgba(29, 95, 162, 0.78);
+	text-shadow: 3px 3px 2px rgba(29, 95, 162, 0.78);
+	border: 1px solid rgba(255, 255, 255, 0.65);
+	box-shadow: 1px 2px 2px rgba(29, 95, 162, 0.5);
+}
+
+[stax~=button][pax~=--blue]:hover {
+	border: 1px solid rgba(255, 255, 255, 0.45);
+	box-shadow: 1px 2px 2px rgba(29, 95, 162, 0.9);
+	background-color: rgba(29, 95, 162, 0.9);
+}
+[stax~=button][pax~=--blue] > span > i,
+[stax~=button][pax~=--blue] > span > span {
+	color: rgba(255, 255, 255, 0.95);
+	text-shadow: 3px 3px 2px rgba(29, 95, 162, 0.78);
+}
+
+*[pax~=--red] {
+	color: #fff;
+	background-color: rgba(150, 9, 9, 0.78);
+	text-shadow: 3px 3px 2px rgba(150, 9, 9, 0.78);
+	border: 1px solid rgba(255, 255, 255, 0.65);
+	box-shadow: 1px 2px 2px rgba(150, 9, 9, 0.5);
+}
+[stax~=button][pax~=--red]:hover {
+	border: 1px solid rgba(255, 255, 255, 0.45);
+	box-shadow: 1px 2px 2px rgba(150, 9, 9, 0.9);
+	background-color: rgba(150, 9, 9, 0.9);
+}
+[stax~=button][pax~=--red] > span > i,
+[stax~=button][pax~=--red] > span > span {
+	color: rgba(255, 255, 255, 0.95);
+	text-shadow: 3px 3px 2px rgba(150, 9, 9, 0.78);
+}
+
+*[pax~=--green] {
+	color: #fff;
+	background-color: rgba(41, 119, 54, 0.78);
+	text-shadow: 3px 3px 2px rgba(41, 119, 54, 0.78);
+	border: 1px solid rgba(255, 255, 255, 0.65);
+	box-shadow: 1px 2px 2px rgba(41, 119, 54, 0.5);
+}
+[stax~=button][pax~=--green]:hover {
+	border: 1px solid rgba(255, 255, 255, 0.45);
+	box-shadow: 1px 2px 2px rgba(41, 119, 54, 0.9);
+	background-color: rgba(41, 119, 54, 0.9);
+}
+[stax~=button][pax~=--green] > span > i,
+[stax~=button][pax~=--green] > span > span {
+	color: rgba(255, 255, 255, 0.95);
+	text-shadow: 3px 3px 2px rgba(41, 119, 54, 0.78);
 }
