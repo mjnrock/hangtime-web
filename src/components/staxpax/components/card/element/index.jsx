@@ -1,4 +1,4 @@
-import { Pane } from "./Pane";
+import Pane from "./pane";
 import Emblem from "./emblem";
 import Button from "./button";
 
