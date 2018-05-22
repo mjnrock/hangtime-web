@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 
 export class Pane extends Component {
 	render() {
-		const { children, cols, type, ...rest } = this.props;
+		const { pax, noInherit = false, children, cols, type, ...rest } = this.props;
 		
 		return (
 			<div
 				stax="pane"
-				pax={ `flex-${!!cols ? cols : 1} ${type === "f" ? "pane-f" : "pane-p"}` }
+				pax={ !!pax ? pax : `flex-${!!cols ? cols : 1} ${type === "f" ? "pane-f" : "pane-p"}` }
 				{ ...rest }
 			>
 			{
-				children !== void 0 && children !== null && children.length > 1 ? children.map((v, i) => {
+				noInherit === false && (children !== void 0 && children !== null && children.length > 1) ? children.map((v, i) => {
 					let base = 2,
 						{ cols } = this.props;
 

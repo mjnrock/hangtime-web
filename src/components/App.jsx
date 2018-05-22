@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import * as Messages from "../actions/Messages";
 import StaxPax from "./staxpax";
+// import Helper from "./staxpax/Helper";
 console.log(StaxPax);
 
 class App extends Component {
@@ -10,7 +11,7 @@ class App extends Component {
 		return (
 			<main stax="container">
 				<StaxPax.Components.Card.Card>
-					<StaxPax.Components.Card.Segment.Options>
+					{/* <StaxPax.Components.Card.Segment.Options>
 						<StaxPax.Components.Card.Element.Pane.Pane type="p" cols="2" style={{
 						border: "none",
 						boxShadow: "none",
@@ -20,13 +21,11 @@ class App extends Component {
 							<StaxPax.Components.Card.Element.Button.SendMessage pax="--red" />
 							<StaxPax.Components.Card.Element.Button.JoinRequest pax="--red" />
 						</StaxPax.Components.Card.Element.Pane.Pane>
-					</StaxPax.Components.Card.Segment.Options>
+					</StaxPax.Components.Card.Segment.Options> */}
 					
 					<StaxPax.Components.Card.Segment.Synopsis>
-						<StaxPax.Components.Card.Element.Pane.Pane type="p">
-							<img src="/assets/images/map.png" alt="map" />
-						</StaxPax.Components.Card.Element.Pane.Pane>
-						<StaxPax.Components.Card.Element.Pane.Pane type="f" cols="1">							
+						<StaxPax.Components.Card.Element.Pane.Map url="/assets/images/map.png" sport="bball" />
+						<StaxPax.Components.Card.Element.Pane.Pane type="f" cols="1">
 							<StaxPax.Components.Card.Element.Pane.Pane>
 								<StaxPax.Components.Card.Element.Emblem.Metric
 									icon="directions_car"
@@ -38,7 +37,24 @@ class App extends Component {
 									unit="pm"
 									value="5:30"
 								/>
-							</StaxPax.Components.Card.Element.Pane.Pane>						
+							</StaxPax.Components.Card.Element.Pane.Pane>
+
+							<StaxPax.Components.Card.Element.Pane.Pane cols="1">
+								<StaxPax.Components.Card.Element.Emblem.Rating
+									value="2.5"
+									label="Cooperation"
+								/>
+								<StaxPax.Components.Card.Element.Emblem.Rating
+									value="4"
+									label="Skill"
+								/>
+							</StaxPax.Components.Card.Element.Pane.Pane>
+
+							<StaxPax.Components.Card.Element.Pane.Pane cols="v">
+								<StaxPax.Components.Card.Element.Pane.Tags
+									tags="men 21 2v2 3v3 beer-league"
+								/>
+							</StaxPax.Components.Card.Element.Pane.Pane>
 						</StaxPax.Components.Card.Element.Pane.Pane>
 					</StaxPax.Components.Card.Segment.Synopsis>
 				</StaxPax.Components.Card.Card>

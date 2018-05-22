@@ -1,0 +1,15 @@
+* "Freshness" Scale for the Game
+* Remove Ratings from screen
+* Social Card on the result set
+
+* Online Status that broadcasts to friends when online like the "Waze 'Friends Online'"
+* Complete Blizzard/D3 chat/game join paradigm shift
+	- "MrFancypants is playing Basketball at Basketball America"
+	- Ahainen can just see that status and can:
+		+ Send an "On My Way!" notification
+		+ Open a Chat
+		+ Open a Chatroom
+	- D3 Private/Public "Game Join" feature
+* Turn app into a transaction coordination
+* Basically like Snapchat / Twitter for Sports with Friends
+* Emphasize the passive nature of the D3 "Friends Playing" / "Join Game"

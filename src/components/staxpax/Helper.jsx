@@ -2,13 +2,38 @@ import React from 'react';
 
 const Helper = {
 	Enum: {
+		Sports: {
+			BASKETBALL: {
+				Value: "bball",
+				Label: "Basketball",
+				Icon: "/assets/images/basketball.png"
+			}
+		},
 		FontSet: {
 			MATERIAL: 1,
 			FONT_AWESOME: 2
+		},
+		RatingSet: {
+			STAR: {
+				Value: 1,
+				Icons: {
+					Empty: "star_border",
+					Half: "star_half",
+					Full: "star"
+				}
+			}
 		}
 	},
 	Transitions: {},
 	ViewPort: {}
+};
+Helper.Enum.Sports.Lookup = (sport) => {
+	switch(sport) {
+		case "bball":
+			return Helper.Enum.Sports.BASKETBALL
+		default:
+			return Helper.Enum.Sports.BASKETBALL;
+	}				
 };
 
 Helper.GenerateIcon = (icon, fontSet = 1) => {
@@ -17,6 +42,9 @@ Helper.GenerateIcon = (icon, fontSet = 1) => {
 	}
 
 	return <i stax="icon" className="material-icons">{ icon }</i>
+};
+Helper.GenerateSportIcon = (sport) => {
+	return <img stax="icon-sport" src={ Helper.Enum.Sports.Lookup(sport).Icon } alt={`icon-${sport}`} />
 };
 
 Helper.Transitions.EaseInOutQuad = (t, b, c, d) => {

@@ -6,7 +6,7 @@ export class Emblem extends Component {
 		return (
 			<div
 				stax={ `emblem ${stax}` }
-				pax={ `b br bs-e ${pax}` }
+				pax={ `b br bs-e ${!!pax ? pax : ""}` }
 				{ ...rest }
 			>
 				{

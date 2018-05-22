@@ -10,7 +10,7 @@ export class Metric extends Component {
 		return (
 			<Emblem
 				stax="metric"
-				pax={ `${pax}` }
+				pax={ `${!!pax ? pax : ""}` }
 				{ ...rest }
 			>
 				<span stax="value" pax="ts">{ value }</span>
