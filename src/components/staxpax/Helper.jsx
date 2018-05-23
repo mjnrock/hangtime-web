@@ -46,6 +46,9 @@ Helper.GenerateIcon = (icon, fontSet = 1) => {
 Helper.GenerateSportIcon = (sport) => {
 	return <img stax="icon-sport" src={ Helper.Enum.Sports.Lookup(sport).Icon } alt={`icon-${sport}`} />
 };
+Helper.GenerateUserIcon = (username) => {
+	return <img stax="icon-user" src={ "/assets/images/fancy.jpg" } alt={`${username} profile`} />
+};
 
 Helper.Transitions.EaseInOutQuad = (t, b, c, d) => {
 	t /= d / 2;

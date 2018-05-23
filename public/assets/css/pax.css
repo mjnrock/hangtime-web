@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Graduate');
 
 html,
 body {
 	font-family: Roboto !important;
 	font-weight: 300;
 	color: #777;
+
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 button {
@@ -16,7 +19,7 @@ button {
 	background-color: rgba(29, 95, 162, 0.78);
 	color: #fff;
 	border: 1px solid #ddd;
-	border-radius: 2px;
+	border-radius: 4px;
 }
 
 img {
@@ -26,17 +29,17 @@ img {
 
 /* *[pax~=segment] {
 	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-radius: 2px;
+	border-radius: 4px;
 	box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
 } */
 
 *[pax~=pane-p] {
 	margin: 5px;
-
-	border: 1px solid #ddd;
-	border-radius: 2px;
-	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;	
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
+
 *[pax~=pane-f] {
 	display: flex;
 	flex-wrap: wrap;
@@ -45,7 +48,6 @@ img {
 *[pax~=flex-tags] {
 	flex: 1;
 	padding: 0 0 5px 5px;
-	/* background-color: rgba(255, 255, 255, 0.9); */
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -55,18 +57,19 @@ img {
 
 *[pax~=flex-p] {
 	display: flex;
+	width: 100%;
 }
 *[pax~=flex-1] {
-	flex: 1 0 calc(90% - 4px);
+	flex: 1 0 calc(90% - 24px);
 }
 *[pax~=flex-2] {
-	flex: 1 0 calc(40% - 4px);
+	flex: 1 0 calc(40% - 24px);
 }
 *[pax~=flex-3] {
-	flex: 1 0 calc(33% - 4px);
+	flex: 1 0 calc(33% - 24px);
 }
 *[pax~=flex-4] {
-	flex: 1 0 calc(25% - 4px);
+	flex: 1 0 calc(25% - 24px);
 }
 
 
@@ -75,7 +78,7 @@ img {
 	padding: 2px;
 
 	border: 1px solid #ddd;
-	border-radius: 2px;
+	border-radius: 4px;
 }
 
 *[pax~=ts] {
@@ -87,7 +90,7 @@ img {
 }
 
 *[pax~=br] { 
-	border-radius: 2px;
+	border-radius: 4px;
 }
 
 *[pax~=bs-e] {
@@ -112,6 +115,10 @@ img {
 	border: 1px solid rgba(255, 255, 255, 0.65);
 	box-shadow: 1px 2px 2px rgba(29, 95, 162, 0.5);
 }
+*[pax~=--blue] * {
+	color: #fff !important;
+}
+
 
 [stax~=button][pax~=--blue]:hover {
 	border: 1px solid rgba(255, 255, 255, 0.45);

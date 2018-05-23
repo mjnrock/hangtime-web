@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Helper from "../../../../Helper";
+// import Helper from "../../../../Helper";
 import { Pane } from "./Pane";
 
 export class Map extends Component {
@@ -14,16 +14,7 @@ export class Map extends Component {
 				noInherit={ true }
 				{...rest}
 			>
-				<div>
-					<img stax="img-map" src={ url } alt={ alt } />
-					<div>
-						{ Helper.GenerateSportIcon(sport) }
-						<div>
-							<span stax="sport-title" pax="ts">This is a title</span>
-							<span stax="sport-description" pax="ts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dicta?</span>
-						</div>
-					</div>
-				</div>
+				<img stax="img-map" src={ url } alt={ alt } />
 			</Pane>
 		);
 	}
