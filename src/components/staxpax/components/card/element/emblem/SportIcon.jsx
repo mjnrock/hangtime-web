@@ -6,7 +6,7 @@ import { Emblem } from "./Emblem";
 
 export class SportIcon extends Component {
 	render() {
-		const { stax, pax, sport, text = true, ...rest } = this.props;
+		const { stax, pax, sport, ...rest } = this.props;
 		return (
 			<Emblem
 				stax="sportIcon"

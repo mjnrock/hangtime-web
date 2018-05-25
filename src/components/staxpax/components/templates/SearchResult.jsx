@@ -1,14 +1,4 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-
-import * as Messages from "../actions/Messages";
-import StaxPax from "./staxpax";
-
-class App extends Component {
-	render() {
-		return (
-			<main stax="container">
-				<StaxPax.Components.Card.Card>					
+<StaxPax.Components.Card.Card>					
 	<StaxPax.Components.Card.Segment.Synopsis>			
 		<StaxPax.Components.Card.Element.Pane.TitleBanner
 			title="Shooty Hoops"
@@ -54,20 +44,3 @@ class App extends Component {
 
 	</StaxPax.Components.Card.Segment.Synopsis>
 </StaxPax.Components.Card.Card>
-			</main>
-		);
-	}
-}
-
-export default connect(
-	(state) => {
-		return {
-			messages: state.messages
-		};
-	},
-	(dispatch) => {
-		return {
-			GetMessages: (arg) => dispatch(Messages.GetMessages(arg))
-		};
-	}
-)(App);
