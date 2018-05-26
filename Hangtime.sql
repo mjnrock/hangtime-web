@@ -119,6 +119,7 @@ CREATE TABLE Hangtime.UserDetail (
 	HomeLocation GEOGRAPHY NULL,
 	CurrentLocation GEOGRAPHY NULL,
 	CurrentLocationDateTimeUTC DATETIME2(3) NULL,
+	UTCOffset TINYINT NULL,
 
 	UUID UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
 	CreatedDateTimeUTC DATETIME2(3) NOT NULL DEFAULT GETUTCDATE(),
@@ -166,7 +167,7 @@ CREATE TABLE Hangtime.Game (
 	ActivityID INT NOT NULL FOREIGN KEY REFERENCES Hangtime.Activity (ActivityID),
 
 	Location GEOGRAPHY NOT NULL,
-	LastCheckinDateTimeUTC DATETIME2(3) NULL,
+	LastCheckinDateTimeUTC DATETIME2(3) NULL DEFAULT GETUTCDATE(),
 	StartDateTimeUTC DATETIME2(3) NOT NULL DEFAULT GETUTCDATE(),
 	EndDateTimeUTC DATETIME2(3) NULL,	
 
@@ -206,3 +207,59 @@ VALUES
 	('USERX', 'User'),
 	('PLACE', 'Place'),
 	('GAMEX', 'Game');
+
+EXEC Hangtime.CreateUser
+	'MrFancypants',
+	'Cat',
+	'matt@kiszka.cat'
+
+EXEC Hangtime.CreateUser
+	'ahainen',
+	'Cat',
+	'andrew@butters.cat'
+
+DECLARE @StartDateTimeUTC DATETIME2(3) = DATEADD(HOUR, 4, GETUTCDATE())
+--	Lake Orion, MI 48362
+EXEC Hangtime.CreateGame
+	'BBALL',
+	1,
+	42.778010042,
+	-83.2666570,
+	@StartDateTimeUTC,
+	DEFAULT
+	
+--	Lake Orion, MI 48362
+EXEC Hangtime.CreateGame
+	'HOCKY',
+	1,
+	42.778010042,
+	-83.2666570,
+	@StartDateTimeUTC,
+	DEFAULT
+	
+--	Ypsilanti, MI 48197
+EXEC Hangtime.CreateGame
+	'BBALL',
+	1,
+	42.1966290,
+	-83.6135570,
+	@StartDateTimeUTC,
+	DEFAULT
+	
+--	Ypsilanti, MI 48197
+EXEC Hangtime.CreateGame
+	'BBALL',
+	1,
+	42.1966290,
+	-83.6135570,
+	@StartDateTimeUTC,
+	DEFAULT
+	
+--	Ypsilanti, MI 48197
+EXEC Hangtime.CreateGame
+	'HOCKY',
+	1,
+	42.1966290,
+	-83.6135570,
+	@StartDateTimeUTC,
+	DEFAULT
