@@ -8,10 +8,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 export default function initStore() {
 	let store = createStore(
-		RootReducer(),	//	SUPER important that this funciton be INVOKED here e.g. (), otherwise the result is impossible to figure out what happened
-		{
-			messages: [1]
-		},
+		RootReducer(),
 		applyMiddleware(sagaMiddleware)
 	);
 

@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 
-import { GetMessages } from "./Messages";
+import { GetProfile } from "./User";
+import { GetProximateGames } from "./Games";
 
 export default function RootReducer() {
 	return combineReducers({
-		messages: GetMessages
+		Profile: GetProfile,
+		ProximateGames: GetProximateGames
 	});
 }
