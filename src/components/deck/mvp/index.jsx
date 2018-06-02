@@ -1,22 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import * as Games from "../../../../actions/Games";
+import * as Games from "../../../actions/Games";
 
-import { Deck } from "../../../../staxpax/Deck";
+import { Deck } from "../../../staxpax/Deck";
 
-import { Anchor } from "../../Anchor";
+import { Broadcast } from "./Broadcast";
 import { Result } from "./Result";
 
 //  Assemble the Deck here and serve as the default call to this file
-class Search extends Component {
+class MVP extends Component {
 	render() {
 		return (
 			<Deck>
-				<Anchor
-					icon="Deck"
-					text="The Search Game Deck"
-				/>
+				<Broadcast />
 				{
 					!!this.props.ProximateGames ? this.props.ProximateGames.map((v, i) => {
 						return (
@@ -43,4 +40,4 @@ export default connect(
 			GetProximateGamesRequest: (activity, lat, long, r) => dispatch(Games.GetProximateGamesRequest(activity, lat, long, r))
 		};
 	}
-)(Search);
+)(MVP);

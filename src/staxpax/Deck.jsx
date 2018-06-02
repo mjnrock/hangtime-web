@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
-export class Deck extends Component {
-    constructor(props) {
-        super(props);
-    }
-    
+export class Deck extends Component {    
 	componentDidMount() {
 	}
 

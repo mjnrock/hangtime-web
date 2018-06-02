@@ -8,10 +8,16 @@ import StaxPax from "../staxpax";
 import Deck from "./deck/package";
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+
+		console.log(connect);
+	}
+
 	componentDidMount() {
 		this.props.GetProfileRequest("mrfancypants");
 		this.props.GetProximateGamesRequest(
-			"8DE5FC08-052A-4D00-A0B4-57A560511230",
+			"FD030E70-6DDC-4A0A-A92E-BCA90B233D8A",
 			42.2411,
 			-83.6130
 		);
@@ -22,13 +28,9 @@ class App extends Component {
 	}
 
 	render() {
-		console.log(this.props);
 		return (
 			<StaxPax.Viewer>
-				<Deck.Game.Search
-					ProximateGames={ this.props.ProximateGames }
-					GetProximateGamesRequest={ this.props.GetProximateGamesRequest }
-				/>
+				<Deck.MVP.MVP />
 			</StaxPax.Viewer>
 		);
 	}

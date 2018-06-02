@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
 
-import { Card } from "../../../../staxpax/Card";
+import { Card } from "../../../staxpax/Card";
 
 export class Result extends Component {
 	render() {
