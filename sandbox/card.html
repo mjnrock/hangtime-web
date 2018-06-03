@@ -29,7 +29,9 @@
 						mi
 					</div>
 				</div>
-				<div class="mvp-result-icon"></div>
+				<div class="mvp-result-metric">
+					<div class="mvp-result-icon"></div>
+				</div>
 				<div class="mvp-result-metric">
 					<div class="mvp-result-metric-value">
 						36:14
@@ -42,7 +44,7 @@
 			</div>
 			<div class="mvp-result-title">Spring 2018 Scrimmage</div>
 			<div class="mvp-result-map">
-				<div>
+				<div id="map">
 					
 				</div>
 			</div>
@@ -71,10 +73,23 @@
 	<!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
     
-    <!-- Place custom JavaScript here -->
-    <!--
-	<script src="path/to/js/file.js"></script>
-	-->
+
+    
+	<script>
+		function initMap() {
+		  // The location of Uluru
+		  var uluru = {lat: -25.344, lng: 131.036};
+		  // The map, centered at Uluru
+		  var map = new google.maps.Map(
+		      document.getElementById('map'), {zoom: 4, center: uluru});
+		  // The marker, positioned at Uluru
+		  var marker = new google.maps.Marker({position: uluru, map: map});
+		}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOo3edUlhrSoUQkyFlSHyV4rhpiyj6O6I&callback=initMap">
+    </script>
+		
   </body>
 </html>
  
