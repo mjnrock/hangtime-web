@@ -10,10 +10,6 @@ import Deck from "./deck/package";
 console.log(Deck);
 
 class App extends Component {
-	// constructor(props) {
-	// 	super(props);
-	// }
-
 	componentDidMount() {
 		this.props.GetProfileRequest("mrfancypants");
 		this.props.GetProximateGamesRequest(
@@ -21,10 +17,6 @@ class App extends Component {
 			42.2411,
 			-83.6130
 		);
-	}
-
-	componentDidUpdate() {
-		
 	}
 
 	render() {
@@ -42,6 +34,7 @@ class App extends Component {
 export default connect(
 	(state) => {
 		return {
+			Grid: state.Grid,
 			Position: state.Position,
 			Profile: state.Profile,
 			ProximateGames: state.ProximateGames
@@ -49,7 +42,8 @@ export default connect(
 	},
 	(dispatch) => {
 		return {
-			MovePosition: (x, y, grid) => dispatch(Position.MovePosition(x, y, grid)),
+			SetGrid: (grid) => dispatch(Position.SetGrid(grid)),
+			MovePosition: (x, y) => dispatch(Position.MovePosition(x, y)),
 			GetProfileRequest: (username) => dispatch(User.GetProfileRequest(username)),
 			GetProximateGamesRequest: (activity, lat, long, r) => dispatch(Games.GetProximateGamesRequest(activity, lat, long, r))
 		};
