@@ -16,8 +16,12 @@ export class Broadcast extends Component {
 
 				</div>
 				<div className="card-content">
-					<div>
-						<i>Basketball</i>
+					<div className="card-title">
+						<object
+							className="icon-activity"
+							data="./assets/images/basketball.svg"
+							type="image/svg+xml"
+						>Basketball Icon</object>
 						<h1>Broadcast</h1>
 					</div>
 					<div className="panel panel-map">
@@ -46,4 +50,4 @@ export class Broadcast extends Component {
 			</Card>
 		);
 	}
-} 
+}

@@ -6,7 +6,7 @@ body,
     font-family: Kanit;
 	height: 100%;
 	margin: 0;
-	overflow: hidden;
+	overflow: hidden !important;
 	touch-action: none;
 }
 
@@ -31,6 +31,7 @@ body,
 
 
 h1 {
+    margin: 0;
     font-family: Kanit;
     font-style: italic;
     font-weight: 800;
@@ -116,15 +117,30 @@ textarea:active {
     padding: 3px;
 }
 .panel-map {
-    height: 250px;
-    max-height: 250px;
+    height: 225px;
+    max-height: 225px;
 }
 .panel-map > img {
     width: 100%;
     height: 100%;
 }
 
-
+.card-title {
+    position: relative;
+    margin-top: 20px;
+}
+.card-title > h1 {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px
+}
+.card-title > .icon-activity {
+    position: relative;
+    z-index: 0;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+}
 
 
 
@@ -200,9 +216,39 @@ textarea:active {
     box-sizing: border-box;
 }
 
+.broadcast > button.broadcast-begin {
+    width: 100%;
+    background: rgba(86, 204, 242, 0.4) ;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;    
+    overflow: hidden;
+    
+    font-family: Kanit;
+    font-style: italic;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+.broadcast > button.broadcast-begin > i {
+    padding-right: 15px;
+}
+.broadcast > button.broadcast-begin > span {
+    position: relative;
+    top: -1px
+}
+
+
 .broadcast-value {
     position: absolute;
-    top: 4px;
+    top: 6px;
 
     font-weight: 200;
     font-size: 24px;
