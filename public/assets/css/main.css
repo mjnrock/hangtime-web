@@ -4,29 +4,37 @@ html,
 body,
 #root {
     font-family: Kanit;
-    width: 90%;
-    height: 90%;
+	background-color: #ddd;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+	touch-action: none;
 }
 
 .sp-viewer {
-    width: 100%;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
+	position: absolute;
+	width: 10000px;
+	height: 10000px;
 }
 
 .sp-deck {
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 .sp-card {
     margin: 5px;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	border-radius: 4px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid rgba(0, 0, 0, 0.15);
+}
 
-    border: 1px solid #000;
-    border-radius: 2px;
+
+.broadcastBar {
+    height: 64px;
+    background-color: #000;
 }
 
 .card-background-01 {
@@ -69,11 +77,11 @@ body,
 /*  SEARCH */
 /*  RESULT */
 
-.game-search-result-title {
+.mvp-result-title {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.1) 100%);
     mix-blend-mode: normal;
 }
-.game-search-result-title > div {
+.mvp-result-title > div {
     margin: 4px;
     background: rgba(255, 255, 255, 0.1);
     font-family: Kanit;
@@ -88,15 +96,15 @@ body,
     text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 1.5px 0px #000000, 0px 0.5px 0px #000000, 0px 0.5px 0px #000000;
 }
 
-.game-search-result-map {
+.mvp-result-map {
 
 }
-.game-search-result-map > div {
+.mvp-result-map > div {
     margin: 4px;
     background: rgba(255, 255, 255, 0.1);
 }
 
-.game-search-result-description {
+.mvp-result-description {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
 
     font-family: Kanit;
@@ -109,11 +117,11 @@ body,
     color: #FFFFFF;
 }
 
-.game-search-result-tags {
+.mvp-result-tags {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.24) 100%);
     background-blend-mode: overlay;
 }
-.game-search-result-tag {
+.mvp-result-tag {
     font-family: Kanit;
     font-style: italic;
     font-weight: 600;
@@ -126,16 +134,16 @@ body,
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.game-search-result-metrics {
+.mvp-result-metrics {
     background: rgba(0, 0, 0, 0.1);
     box-shadow: inset 0px -0.5px 0px rgba(255, 255, 255, 0.1);
     display: inline-flex;
 }
-.game-search-result-metric {
+.mvp-result-metric {
     width: 33%;
     height: 100%;
 }
-.game-search-result-metric-value {
+.mvp-result-metric-value {
     font-family: Kanit;
     font-style: italic;
     font-weight: 600;
@@ -147,7 +155,7 @@ body,
     color: #FFFFFF;
     text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 1px 0px #000000;
 }
-.game-search-result-metric-unit {
+.mvp-result-metric-unit {
     font-family: Kanit;
     font-style: italic;
     font-weight: 500;

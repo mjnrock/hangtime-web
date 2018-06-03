@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import moment from "moment";
 
 import { Card } from "../../../staxpax/Card";
 
 export class Broadcast extends Component {
-	render() {
-		let data = this.props.data;
-		
+	render() {		
 		return (
 			<Card
 				className="card-background-01"
+				style={ this.props.style }
+				deck-x={ this.props["deck-x"] }
+				deck-y={ this.props["deck-y"] }
 			>
 				<div className="card-header">
 				

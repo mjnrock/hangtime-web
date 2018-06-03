@@ -10,48 +10,51 @@ export class Result extends Component {
 		return (
 			<Card
 				className="card-background-01"
+				style={ this.props.style }
+				deck-x={ this.props["deck-x"] }
+				deck-y={ this.props["deck-y"] }
 			>
 				<div className="card-header">
 					Pull Down to Join
 				</div>
 				<div className="card-content">
-					<div className="game-search-result-metrics">
-						<div className="game-search-result-metric">
-							<div className="game-search-result-metric-value">
+					<div className="mvp-result-metrics">
+						<div className="mvp-result-metric">
+							<div className="mvp-result-metric-value">
 								{ data.DistanceMiles }
 							</div>
-							<div className="game-search-result-metric-unit">
+							<div className="mvp-result-metric-unit">
 								mi
 							</div>
 						</div>
 						
-						<div className="game-search-result-metric">
-							<div className="game-search-result-metric-value">
+						<div className="mvp-result-metric">
+							<div className="mvp-result-metric-value">
 								{ moment(data.StartDateTimeUTC).format("h:mm") }
 							</div>
-							<div className="game-search-result-metric-unit">
+							<div className="mvp-result-metric-unit">
 								{ moment(data.StartDateTimeUTC).format("a") }
 							</div>
 						</div>
 					</div>
-					<div className="game-search-result-title">
+					<div className="mvp-result-title">
 						<div>
 							{ data.Title }
 						</div>
 					</div>
-					<div className="game-search-result-map">
+					<div className="mvp-result-map">
 						<div>
 							
 						</div>
 					</div>
-					<div className="game-search-result-description">
+					<div className="mvp-result-description">
 						{ data.Description }
 					</div>
-					<div className="game-search-result-tags">
+					<div className="mvp-result-tags">
 						{
 							!!data.Tags ? data.Tags.split(",").map((v, i) => {
 								return (
-									<div className="game-search-result-tag" key={ i }>
+									<div className="mvp-result-tag" key={ i }>
 									{
 										v
 									}

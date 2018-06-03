@@ -13,13 +13,25 @@ class MVP extends Component {
 	render() {
 		return (
 			<Deck>
-				<Broadcast />
+				<Broadcast
+					style={{
+						width: "50px",
+						height: "50px"
+					}}
+					deck-x="0"
+					deck-y="0"
+				/>
 				{
 					!!this.props.ProximateGames ? this.props.ProximateGames.map((v, i) => {
 						return (
 							<Result
 								key={ i }
 								data={ v }
+								style={{
+									
+								}}
+								deck-x="0"
+								deck-y={ i + 1 }
 							/>
 						);
 					}) : "Loading..."
