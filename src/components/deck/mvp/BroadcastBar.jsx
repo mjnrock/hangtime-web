@@ -33,7 +33,7 @@ export class BroadcastBar extends Component {
 				
 				<button className="broadcast-startStop">
 					<span className="broadcast-value">
-						{ 1 === 0 ? "StartIcon" : "StopIcon" }
+						<i className="icon-activity-basketball"></i>
 					</span>
 					<span className="broadcast-unit">
 						{ 1 === 0 ? "Start" : "Stop" }

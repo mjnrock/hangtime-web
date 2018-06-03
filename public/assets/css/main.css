@@ -60,6 +60,7 @@ textarea {
     background: rgba(0, 0, 0, 0.1);
     mix-blend-mode: normal;
     border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: 350ms;
     box-sizing: border-box;
 }
 textarea {
@@ -70,6 +71,14 @@ textarea::placeholder {
     opacity: 0.3;
 
     color: #FFFFFF;
+}
+input:focus,
+textarea:focus,
+input:active,
+textarea:active {
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.25);
 }
 
 .ht-input-group,
@@ -92,7 +101,7 @@ textarea::placeholder {
 .bevel-bottom {
     width: 250px;
     height: 10px;
-    margin-top: -6px;
+    margin-top: -3px;
 
 }
 .bevel-top {
@@ -107,8 +116,8 @@ textarea::placeholder {
     padding: 3px;
 }
 .panel-map {
-    height: 200px;
-    max-height: 200px;
+    height: 250px;
+    max-height: 250px;
 }
 .panel-map > img {
     width: 100%;
