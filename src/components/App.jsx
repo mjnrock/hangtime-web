@@ -13,7 +13,7 @@ class App extends Component {
 	componentDidMount() {
 		this.props.GetProfileRequest("mrfancypants");
 		this.props.GetProximateGamesRequest(
-			"FD030E70-6DDC-4A0A-A92E-BCA90B233D8A",
+			"2D07598C-234E-487B-B037-3BEDA39C4098",
 			42.2411,
 			-83.6130
 		);

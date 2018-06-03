@@ -18,27 +18,20 @@ class MVP extends Component {
 				SetGrid={ this.props.SetGrid }
 			>
 				<Broadcast
-					style={{
-						width: "50px",
-						height: "50px"
-					}}
+					viewport={ this.props.ViewPort }
+					calcPos={ this.props.CalculatePosition }
 					deck-x={ 0 }
 					deck-y={ 0 }
 				/>
 				{
-					!!this.props.ProximateGames ? this.props.ProximateGames.map((v, i) => {
-						let pos = this.props.CalculatePosition(i + 1, 0);
-						console.log(pos);
+					!!this.props.ProximateGames ? this.props.ProximateGames.map((v, i) => {						
 						return (
 							<Result
 								key={ i }
 								data={ v }
-								style={{
-									width: this.props.ViewPort.Width,
-									height: this.props.ViewPort.Height,
-									top: pos.Y,
-									left: pos.X
-								}}
+								
+								viewport={ this.props.ViewPort }
+								calcPos={ this.props.CalculatePosition }
 								deck-x={ i + 1 }
 								deck-y={ 0 }
 							/>

@@ -4,6 +4,11 @@ export class BroadcastBar extends Component {
 	render() {		
 		return (
 			<div className="broadcastBar">
+				<button className="broadcastBar-btnBroadcastGame">
+					<i>Basketball</i>
+					<span>Broadcast Game</span>
+				</button>
+
 				<div className="broadcastBar-remaining">
 					<span className="broadcastBar-value">
 						XX:XX

@@ -129,7 +129,7 @@ export class Viewer extends Component {
                 );
             }
 		}
-		e.preventDefault();
+		// e.preventDefault();
     }
 
     TryMove(pos, grid) {        

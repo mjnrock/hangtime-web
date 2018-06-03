@@ -10,7 +10,8 @@ export class Result extends Component {
 		return (
 			<Card
 				className="card-background-01"
-				style={ this.props.style }
+				viewport={ this.props.viewport }
+				calcPos={ this.props.calcPos }
 				deck-x={ this.props["deck-x"] }
 				deck-y={ this.props["deck-y"] }
 			>
