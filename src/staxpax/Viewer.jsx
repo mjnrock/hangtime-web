@@ -7,7 +7,7 @@ export class Viewer extends Component {
 		this.Grid = [];
 
         this.ViewPort = {
-			Margin: 10,
+			Margin: 0,
             Width: window.innerWidth,
             Height: window.innerHeight,
             Position: {
@@ -42,11 +42,19 @@ export class Viewer extends Component {
 	}
     
 	render() {
+        let children = React.Children.map(
+            this.props.children,
+            child => React.cloneElement(child, {
+                ViewPort: this.ViewPort,
+                CalculatePosition: this.CalculatePosition.bind(this)
+            })
+        );
+
 		return (
 			<div
 				className={ `sp-viewer ${!!this.props.className ? this.props.className : ""}`}
 			>
-				{ this.props.children }
+				{ children }
 			</div>
 		);
 	}

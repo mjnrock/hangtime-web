@@ -6,19 +6,19 @@ export class Deck extends Component {
 		this.props.children.forEach((v, i) => {
 			if(Array.isArray(v)) {
 				v.forEach((av, ai) => {
-					if(!Array.isArray(deck[av.props["deck-x"]])) {
-						deck[av.props["deck-x"]] = [];
+					if(!Array.isArray(deck[av.props["deck-y"]])) {
+						deck[av.props["deck-y"]] = [];
 					}
 
-					deck[av.props["deck-x"]][av.props["deck-y"]] = true;
+					deck[av.props["deck-y"]][av.props["deck-x"]] = true;
 				});
 			} else {
 				if(typeof v === "object") {
-					if(!Array.isArray(deck[v.props["deck-x"]])) {
-						deck[v.props["deck-x"]] = [];
+					if(!Array.isArray(deck[v.props["deck-y"]])) {
+						deck[v.props["deck-y"]] = [];
 					}
 
-					deck[v.props["deck-x"]][v.props["deck-y"]] = true;
+					deck[v.props["deck-y"]][v.props["deck-x"]] = true;
 				}
 			}
 		});

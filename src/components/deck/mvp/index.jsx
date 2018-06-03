@@ -22,20 +22,25 @@ class MVP extends Component {
 						width: "50px",
 						height: "50px"
 					}}
-					deck-x="0"
-					deck-y="0"
+					deck-x={ 0 }
+					deck-y={ 0 }
 				/>
 				{
 					!!this.props.ProximateGames ? this.props.ProximateGames.map((v, i) => {
+						let pos = this.props.CalculatePosition(i + 1, 0);
+						console.log(pos);
 						return (
 							<Result
 								key={ i }
 								data={ v }
 								style={{
-									
+									width: this.props.ViewPort.Width,
+									height: this.props.ViewPort.Height,
+									top: pos.Y,
+									left: pos.X
 								}}
-								deck-x="0"
-								deck-y={ i + 1 }
+								deck-x={ i + 1 }
+								deck-y={ 0 }
 							/>
 						);
 					}) : "Loading..."
