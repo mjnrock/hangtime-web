@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Kanit:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 
 html,
 body,
 #root {
     font-family: Kanit;
-	background-color: #ddd;
 	height: 100%;
 	margin: 0;
 	overflow: hidden;
@@ -24,18 +23,101 @@ body,
 }
 
 .sp-card {
-    margin: 0;
 	position: absolute;
-	border-radius: 4px;
-	background-color: rgba(255, 255, 255, 0.8);
-	border: 1px solid rgba(0, 0, 0, 0.15);
+    margin: 0;
+    padding: 0;
 }
 
 
-.broadcastBar {
-    height: 64px;
-    background-color: #000;
+
+h1 {
+    font-family: Kanit;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 30px;
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 1.5px 0px #000000, 0px 0.5px 0px #000000, 0px 0.5px 0px #000000;
 }
+
+input,
+textarea {
+    min-height: 48px;
+    width: 100%;
+
+    font-family: Kanit;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 18px;
+    font-size: 15px;
+    padding: 10px;
+    
+    color: #FFFFFF;
+
+    background: rgba(0, 0, 0, 0.1);
+    mix-blend-mode: normal;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+}
+textarea {
+    min-height: 64px;
+}
+input::placeholder,
+textarea::placeholder {
+    opacity: 0.3;
+
+    color: #FFFFFF;
+}
+
+.ht-input-group,
+.ht-input-group > *:not(:first-child) {
+    margin-top: 4px;
+}
+
+.card-header,
+.card-content,
+.card-footer {
+    margin: 0 auto;
+    width: calc(100% - 48px);
+}
+
+.bevel-bottom,
+.bevel-top {
+    display: block;
+    margin: 0 auto;
+}
+.bevel-bottom {
+    width: 250px;
+    height: 10px;
+    margin-top: -6px;
+
+}
+.bevel-top {
+
+}
+
+.panel {
+    background: rgba(255, 255, 255, 0.2);
+    mix-blend-mode: normal;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+    padding: 3px;
+}
+.panel-map {
+    height: 200px;
+    max-height: 200px;
+}
+.panel-map > img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
 
 .card-background-01 {
     background-image: url("../images/background-01.png");
@@ -43,38 +125,8 @@ body,
     mix-blend-mode: normal;
 }
 
-/*  CARD */
-.card-header {
-    font-family: Kanit;
-    font-style: italic;
-    font-weight: 600;
-    line-height: normal;
-    font-size: 18px;
-    text-align: center;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
 
-    color: #000000;
-    opacity: 0.2;
-}
-.card-footer {
-    font-family: Kanit;
-    font-style: italic;
-    font-weight: 600;
-    line-height: normal;
-    font-size: 18px;
-    text-align: center;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-
-    color: #FFFFFF;
-    opacity: 0.2;
-}
-.card-content {
-    
-}
-
-.broadcastBar {
+.broadcast {
     max-height: 64px;
     width: calc(100% - 6px);
     height: 64px;
@@ -82,16 +134,17 @@ body,
 
     position: fixed;
     bottom: 0;
+    display: inline-flex;
 }
 
-.broadcastBar-btnBroadcastGame {
+.broadcast-btnBroadcastGame {
     width: 100%;
     height: 100%;
     background: rgba(86, 204, 242, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
 }
-.broadcastBar-btnBroadcastGame > * {
+.broadcast-btnBroadcastGame > * {
     display: inline-block;
  
     font-family: Kanit;
@@ -105,106 +158,62 @@ body,
     color: #FFFFFF;
 }
 
-/*  GAME */
-/*  HOST */
-.mvp-broadcast-detail > * {
+
+.broadcast > button {
+    width: 20%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-left: 3px;
+
+    font-family: Kanit;
+    font-style: italic;
+    line-height: normal;
+    text-align: center;
+    background: rgba(86, 204, 242, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;    
+    overflow: hidden;
+}
+.broadcast > button:first-child {
+    width: 40%;
+    margin-left: 0;
+
     background: rgba(0, 0, 0, 0.1);
     mix-blend-mode: normal;
     border: 1px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;    
+}
+.broadcast > button:last-child {
+    background: rgba(231, 66, 50, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
 }
 
+.broadcast-value {
+    position: absolute;
+    top: 4px;
 
-
-/*  SEARCH */
-/*  RESULT */
-.mvp-result-title {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.1) 100%);
-    mix-blend-mode: normal;
-}
-.mvp-result-title > div {
-    margin: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    font-family: Kanit;
-    font-style: italic;
-    font-weight: 800;
-    line-height: 30px;
-    font-size: 36px;
-    text-align: center;
-    text-transform: uppercase;
-
-    border: 4px solid #000000;
-    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 1.5px 0px #000000, 0px 0.5px 0px #000000, 0px 0.5px 0px #000000;
-}
-
-.mvp-result-map {
-
-}
-.mvp-result-map > div {
-    margin: 4px;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.mvp-result-description {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
-
-    font-family: Kanit;
-    font-style: italic;
-    font-weight: normal;
-    line-height: 13px;
-    font-size: 15px;
-    text-align: center;
-
-    color: #FFFFFF;
-}
-
-.mvp-result-tags {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.24) 100%);
-    background-blend-mode: overlay;
-}
-.mvp-result-tag {
-    font-family: Kanit;
-    font-style: italic;
-    font-weight: 600;
-    line-height: normal;
-    font-size: 18px;
-    text-align: center;
-    text-transform: uppercase;
-
-    color: #FFFFFF;
-    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.mvp-result-metrics {
-    background: rgba(0, 0, 0, 0.1);
-    box-shadow: inset 0px -0.5px 0px rgba(255, 255, 255, 0.1);
-    display: inline-flex;
-}
-.mvp-result-metric {
-    width: 33%;
-    height: 100%;
-}
-.mvp-result-metric-value {
-    font-family: Kanit;
-    font-style: italic;
-    font-weight: 600;
-    line-height: normal;
+    font-weight: 200;
     font-size: 24px;
-    text-align: center;
+
+    color: #FFFFFF;
+}
+.broadcast-unit {
+    position: absolute;
+    bottom: 0;
+
+    font-weight: bold;
+    font-size: 15px;
     text-transform: uppercase;
     
     color: #FFFFFF;
-    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 1px 0px #000000;
 }
-.mvp-result-metric-unit {
-    font-family: Kanit;
-    font-style: italic;
-    font-weight: 500;
-    line-height: normal;
-    font-size: 12px;
-    text-align: center;
-    text-transform: uppercase;
 
-    color: #FFFFFF;
-    opacity: 0.5;
+.broadcast-remaining {
+    position: absolute;
+    top: -10px;
+
+    font-size: 42px;
 }

@@ -12,7 +12,7 @@ export class Card extends Component {
 		let pos = this.props.calcPos(this.props["deck-x"], this.props["deck-y"]);
 
 		return (
-			<div
+			<section
 				className={ `sp-card ${!!this.props.className ? this.props.className : ""}`}
 				style={{
 					width: this.props.viewport.Width,
@@ -24,7 +24,7 @@ export class Card extends Component {
 				deck-y={ this.props["deck-y"] }
 			>
 				{ this.props.children }
-			</div>
+			</section>
 		);
 	}
 }

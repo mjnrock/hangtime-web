@@ -30,11 +30,11 @@ export class Deck extends Component {
 	
 	render() {
 		return (
-			<div
+			<main
 				className={ `sp-deck ${!!this.props.className ? this.props.className : ""}`}
 			>
 				{ this.props.children }
-			</div>
+			</main>
 		);
 	}
 }
