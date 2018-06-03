@@ -4,6 +4,8 @@ export class Viewer extends Component {
     constructor(props) {
         super(props);
 
+		this.Grid = [];
+
         this.ViewPort = {
 			Margin: 10,
             Width: window.innerWidth,
@@ -34,9 +36,9 @@ export class Viewer extends Component {
         this.InitializeEventListeners();
     }
 
-	componentDidUpdate(props) {
+	componentWillReceiveProps(props) {
         let pos = this.CalculatePosition(props.state.Position.X, props.state.Position.Y);
-		this.scrollTo(pos.X, pos.Y, this.ViewPort.Speed.Swipe);
+		this.ScrollTo(pos.X, pos.Y, this.ViewPort.Speed.Swipe);
 	}
     
 	render() {
@@ -81,36 +83,69 @@ export class Viewer extends Component {
             dy = this.Touch.Last.Y - te.y;
 
 		if(Math.abs(dx) > this.Touch.Threshold.X || Math.abs(dy) > this.Touch.Threshold.Y) {
+            let d = {};
 			if(Math.abs(dx) > Math.abs(dy)) {	
-				if(dx > 0) {	//	Swipe Left
-                    this.props.state.MovePosition(
-                        this.props.state.Position.X + 1,
-                        this.props.state.Position.Y
-                    );
+                if(dx > 0) {	//	Swipe Left
+                    d = {
+                        X: 1,
+                        Y: 0
+                    };
 				} else {	//	Swipe Right
-                    this.props.state.MovePosition(
-                        this.props.state.Position.X - 1,
-                        this.props.state.Position.Y
-                    );
+                    d = {
+                        X: -1,
+                        Y: 0
+                    };
 				}
 			} else {	
 				if(dy > 0) {	//	Swipe Up
-                    this.props.state.MovePosition(
-                        this.props.state.Position.X,
-                        this.props.state.Position.Y + 1
-                    );
+                    d = {
+                        X: 0,
+                        Y: 1
+                    };
                 } else {	//	Swipe Down
-                    this.props.state.MovePosition(
-                        this.props.state.Position.X,
-                        this.props.state.Position.Y - 1
-                    );
+                    d = {
+                        X: 0,
+                        Y: -1
+                    };
 				}
-			}
+            }
+            
+            let pos = {
+                X: this.props.state.Position.X + d.X,
+                Y: this.props.state.Position.Y + d.Y
+            };
+            if(this.TryMove(pos, this.props.state.Grid)) {
+                this.props.state.MovePosition(
+                    pos.X,
+                    pos.Y
+                );
+            }
 		}
 		e.preventDefault();
     }
+
+    TryMove(pos, grid) {        
+        if(pos.X < 0) {
+            return false;
+        }
+        if(pos.Y < 0) {
+            return false;
+        }
+        if(pos.Y >= grid.length) {
+            return false;
+        }
+        if(pos.X >= grid[0].length) {
+            return false;
+        }
+
+        if(grid[pos.Y][pos.X] === true) {
+            return true;
+        }
+        
+        return false;
+    }
     
-	scrollTo(x, y, duration) {
+	ScrollTo(x, y, duration) {
 		let start = {
 				x: window.scrollX,
 				y: window.scrollY
@@ -126,8 +161,8 @@ export class Viewer extends Component {
 			currentTime += increment;
 
 			let val = {
-				x: this.easeInOutQuad(currentTime, start.x, change.x, duration),
-				y: this.easeInOutQuad(currentTime, start.y, change.y, duration)
+				x: this.EaseInOutQuad(currentTime, start.x, change.x, duration),
+				y: this.EaseInOutQuad(currentTime, start.y, change.y, duration)
 			}
 			window.scrollTo(val.x, val.y);
 
@@ -137,10 +172,7 @@ export class Viewer extends Component {
 		}.bind(this);
 		animateScroll();
 	}
-	clamp(number, min, max) {
-		return Math.min(Math.max(number, min), max);
-	}
-	easeInOutQuad(t, b, c, d) {
+	EaseInOutQuad(t, b, c, d) {
 		t /= d / 2;
 		if (t < 1) {
 			return c / 2 * t * t + b;

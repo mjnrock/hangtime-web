@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import * as Games from "../../../actions/Games";
+import * as Position from "../../../actions/Position"
 
 import { Deck } from "../../../staxpax/Deck";
 
@@ -12,7 +13,10 @@ import { Result } from "./Result";
 class MVP extends Component {
 	render() {
 		return (
-			<Deck>
+			<Deck
+				Grid={ this.props.Grid }
+				SetGrid={ this.props.SetGrid }
+			>
 				<Broadcast
 					style={{
 						width: "50px",
@@ -44,11 +48,15 @@ class MVP extends Component {
 export default connect(
 	(state) => {
 		return {
+			Grid: state.Grid,
+			Position: state.Position,
 			ProximateGames: state.ProximateGames
 		};
 	},
 	(dispatch) => {
 		return {
+			SetGrid: (grid) => dispatch(Position.SetGrid(grid)),
+			MovePosition: (x, y) => dispatch(Position.MovePosition(x, y)),
 			GetProximateGamesRequest: (activity, lat, long, r) => dispatch(Games.GetProximateGamesRequest(activity, lat, long, r))
 		};
 	}
