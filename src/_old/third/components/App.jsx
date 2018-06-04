@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link, Route, Switch } from 'react-router-dom';
 
 import * as User from "../actions/User";
 import * as Games from "../actions/Games";
-import * as Position from "../actions/Position";
+import * as Position from "../actions/Position"
 
+import StaxPax from "../staxpax";
 import Deck from "./deck/package";
-
-import { Main } from "./Main";
-import { HostGame } from "./routes/HostGame";
+console.log(Deck);
 
 class App extends Component {
 	componentDidMount() {
 		this.props.GetProfileRequest("mrfancypants");
 		this.props.GetProximateGamesRequest(
-			"basketball",
+			"2D07598C-234E-487B-B037-3BEDA39C4098",
 			42.2411,
 			-83.6130
 		);
@@ -23,16 +21,12 @@ class App extends Component {
 
 	render() {
 		return (
-			<div>
-				<ul>
-					<li><Link to='/'>Home</Link></li>
-					<li><Link to='/game/host'>Host Game</Link></li>
-				</ul> 
-				<Switch>
-					<Route exact path="/" component={ Main } />
-					<Route path="/game/host/:code" component={ HostGame } />
-				</Switch>	  
-			</div>
+			<StaxPax.Viewer
+				state={ this.props }
+			>
+				<Deck.MVP.MVP />
+				<Deck.MVP.BroadcastBar />
+			</StaxPax.Viewer>
 		);
 	}
 }
