@@ -1,45 +1,42 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import * as Games from "../../../../actions/Games";
+import * as User from "../../actions/User";
+import * as Games from "../../actions/Games";
 
-import { Deck } from "../../../../staxpax/Deck";
+import { Result } from "../../components/deck/mvp/Result";
 
-import { Anchor } from "../../Anchor";
-import { Result } from "./Result";
-
-//  Assemble the Deck here and serve as the default call to this file
 class Search extends Component {
 	render() {
+		this.props.ProximateGames;
 		return (
-			<Deck>
-				<Anchor
-					icon="Deck"
-					text="The Search Game Deck"
-				/>
+			<div>
 				{
 					!!this.props.ProximateGames ? this.props.ProximateGames.map((v, i) => {
 						return (
 							<Result
 								key={ i }
-								data={ v }
+								data={ this.props.ProximateGames }
 							/>
 						);
 					}) : "Loading..."
 				}
-			</Deck>
+			</div>
 		);
 	}
 }
 
 export default connect(
 	(state) => {
+		console.log(state);
 		return {
+			Profile: state.Profile,
 			ProximateGames: state.ProximateGames
 		};
 	},
 	(dispatch) => {
 		return {
+			GetProfileRequest: (username) => dispatch(User.GetProfileRequest(username)),
 			GetProximateGamesRequest: (activity, lat, long, r) => dispatch(Games.GetProximateGamesRequest(activity, lat, long, r))
 		};
 	}

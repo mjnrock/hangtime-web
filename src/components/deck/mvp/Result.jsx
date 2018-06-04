@@ -8,13 +8,7 @@ export class Result extends Component {
 		let data = this.props.data;
 		
 		return (
-			<Card
-				className="card-background-01"
-				viewport={ this.props.viewport }
-				calcPos={ this.props.calcPos }
-				deck-x={ this.props["deck-x"] }
-				deck-y={ this.props["deck-y"] }
-			>
+			<div>
 				<div className="card-header">
 					Pull Down to Join
 				</div>
@@ -68,7 +62,7 @@ export class Result extends Component {
 				<div className="card-footer">
 					Swipe Up for Details
 				</div>
-			</Card>
+			</div>
 		);
 	}
 }

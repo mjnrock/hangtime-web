@@ -8,17 +8,12 @@ import { onGetUserExtended } from "../api/get/UserExtended";
 
 import { onGetProximateGames } from "../api/get/ProximateGames";
 
-import { onMovePosition, onSetGrid } from "../reducers/Position";
-
 export default function* rootSaga() {
     yield all([
         takeLatest(ActionType.GET_PROFILE_REQUEST, onGetProfile),
         takeLatest(ActionType.GET_USER_BASIC_REQUEST, onGetUserBasic),
         takeLatest(ActionType.GET_USER_EXTENDED_REQUEST, onGetUserExtended),
         
-        takeLatest(ActionType.GET_PROXIMATE_GAMES_REQUEST, onGetProximateGames),
-
-        takeLatest(ActionType.POSITION_MOVE, onMovePosition),
-        takeLatest(ActionType.GRID_SET, onSetGrid),
+        takeLatest(ActionType.GET_PROXIMATE_GAMES_REQUEST, onGetProximateGames)
     ]);
 }

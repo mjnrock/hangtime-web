@@ -3,7 +3,7 @@ import { put, call } from 'redux-saga/effects';
 import ActionType from "../../enums/ActionType";
 
 export async function FetchProfile(action) {
-    const response = await fetch(`http://192.1:3005/user/${action.payload}?s=1`);
+    const response = await fetch(`http://localhost:3005/user/${action.payload}?s=1`);
     const json = await response.json();
 
     return await json;

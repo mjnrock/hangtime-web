@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 
-export class HostGame extends Component {
+export class Host extends Component {
 	render() {
-		console.log(this.props);
 		return (
 			<div>
-				Game 
-				{ this.props.match.params.uuid }
+				Host 
+				{ this.props.match.params.code }
 				<i>{ this.props.icon }</i>
 				<span>{ this.props.text }</span>
 			</div>

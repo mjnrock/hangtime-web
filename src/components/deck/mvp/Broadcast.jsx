@@ -5,13 +5,7 @@ import { Card } from "../../../staxpax/Card";
 export class Broadcast extends Component {
 	render() {		
 		return (
-			<Card
-				className="card-background-01"
-				viewport={ this.props.viewport }
-				calcPos={ this.props.calcPos }
-				deck-x={ this.props["deck-x"] }
-				deck-y={ this.props["deck-y"] }
-			>
+			<div>
 				<div className="card-header">
 
 				</div>
@@ -47,7 +41,7 @@ export class Broadcast extends Component {
 						</svg>
 					</div>
 				</div> 
-			</Card>
+			</div>
 		);
 	}
 }

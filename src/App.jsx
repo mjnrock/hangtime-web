@@ -2,14 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link, Route, Switch } from 'react-router-dom';
 
-import * as User from "../actions/User";
-import * as Games from "../actions/Games";
-import * as Position from "../actions/Position";
+import * as User from "./actions/User";
+import * as Games from "./actions/Games";
 
-import Deck from "./deck/package";
-
-import { Main } from "./Main";
-import { HostGame } from "./routes/HostGame";
+import Routes from "./routes/package";
 
 class App extends Component {
 	componentDidMount() {
@@ -27,10 +23,13 @@ class App extends Component {
 				<ul>
 					<li><Link to='/'>Home</Link></li>
 					<li><Link to='/game/host'>Host Game</Link></li>
-				</ul> 
+					<li><Link to='/game/search'>Search Game</Link></li>
+				</ul>
+
 				<Switch>
-					<Route exact path="/" component={ Main } />
-					<Route path="/game/host/:code" component={ HostGame } />
+					<Route exact path="/" component={ Routes.Main } />
+					<Route path="/game/host/" component={ Routes.Game.Host } />
+					<Route path="/game/search/:code?" component={ Routes.Game.Search } />
 				</Switch>	  
 			</div>
 		);
@@ -40,16 +39,12 @@ class App extends Component {
 export default connect(
 	(state) => {
 		return {
-			Grid: state.Grid,
-			Position: state.Position,
 			Profile: state.Profile,
 			ProximateGames: state.ProximateGames
 		};
 	},
 	(dispatch) => {
 		return {
-			SetGrid: (grid) => dispatch(Position.SetGrid(grid)),
-			MovePosition: (x, y) => dispatch(Position.MovePosition(x, y)),
 			GetProfileRequest: (username) => dispatch(User.GetProfileRequest(username)),
 			GetProximateGamesRequest: (activity, lat, long, r) => dispatch(Games.GetProximateGamesRequest(activity, lat, long, r))
 		};

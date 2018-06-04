@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter  } from "react-router-dom";
 
 import initStore from "./store/config.jsx";
-import App from "./components/App";
+import App from "./App";
 
 const store = initStore();
 
