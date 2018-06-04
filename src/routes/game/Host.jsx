@@ -1,14 +1,27 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-export class Host extends Component {
+import * as User from "../../actions/User";
+
+import MVP from "../../components/deck/mvp/package";
+
+class Host extends Component {
 	render() {
 		return (
-			<div>
-				Host 
-				{ this.props.match.params.code }
-				<i>{ this.props.icon }</i>
-				<span>{ this.props.text }</span>
-			</div>
+			<MVP.Broadcast />
 		);
 	}
 }
+
+export default connect(
+	(state) => {
+		return {
+			Profile: state.Profile,
+		};
+	},
+	(dispatch) => {
+		return {
+			GetProfileRequest: (username) => dispatch(User.GetProfileRequest(username)),
+		};
+	}
+)(Host);

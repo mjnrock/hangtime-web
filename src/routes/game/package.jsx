@@ -1,4 +1,4 @@
-import { Host } from "./Host";
+import Host from "./Host";
 import Search from "./Search";
 
 export default {

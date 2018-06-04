@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import * as User from "./actions/User";
 import * as Games from "./actions/Games";
 
 import Routes from "./routes/package";
+import MVP from "./components/deck/mvp/package";
 
 class App extends Component {
 	componentDidMount() {
@@ -19,19 +20,19 @@ class App extends Component {
 
 	render() {
 		return (
-			<div>
-				<ul>
-					<li><Link to='/'>Home</Link></li>
-					<li><Link to='/game/host'>Host Game</Link></li>
-					<li><Link to='/game/search'>Search Game</Link></li>
-				</ul>
-
-				<Switch>
-					<Route exact path="/" component={ Routes.Main } />
-					<Route path="/game/host/" component={ Routes.Game.Host } />
-					<Route path="/game/search/:code?" component={ Routes.Game.Search } />
-				</Switch>	  
-			</div>
+			<BrowserRouter>
+				<div>
+					<MVP.NavBar />
+					
+					<Switch>
+						<Route exact path="/" component={ Routes.Game.Host  } />
+						<Route path="/host/" component={ Routes.Game.Host } />
+						<Route path="/search/nearby/:code?" component={ Routes.Game.Search } />
+					</Switch>
+					
+					<MVP.BroadcastBar />
+				</div>
+			</BrowserRouter>
 		);
 	}
 }

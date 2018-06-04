@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import { Card } from "../../../staxpax/Card";
-
 export class Broadcast extends Component {
 	render() {		
 		return (

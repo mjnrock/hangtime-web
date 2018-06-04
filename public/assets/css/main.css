@@ -9,6 +9,11 @@ body,
 	overflow: hidden !important;
 	touch-action: none;
 }
+#root {
+    background-image: url("../images/background-01.png");
+    background-size: contain;
+    mix-blend-mode: normal;
+}
 
 .sp-viewer {
 	position: absolute;
@@ -140,14 +145,6 @@ textarea:active {
     left: calc(50% - 40px);
     width: 80px;
     height: 80px;
-}
-
-
-
-.card-background-01 {
-    background-image: url("../images/background-01.png");
-    background-size: contain;
-    mix-blend-mode: normal;
 }
 
 

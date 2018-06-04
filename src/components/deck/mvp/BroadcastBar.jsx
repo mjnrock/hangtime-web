@@ -4,7 +4,7 @@ export class BroadcastBar extends Component {
 	render() {		
 		return (
 			<div className="broadcast">
-				{/* <button>
+				<button>
 					<span className="broadcast-value broadcast-remaining">
 						59:59
 					</span>
@@ -38,12 +38,12 @@ export class BroadcastBar extends Component {
 					<span className="broadcast-unit">
 						{ 1 === 0 ? "Start" : "Stop" }
 					</span>
-				</button> */}
+				</button>
 
-				<button className="broadcast-begin">
+				{/* <button className="broadcast-begin">
 					<i className="icon-broadcast-start"></i>
 					<span>Broadcast Game</span>
-				</button>
+				</button> */}
 			</div>
 		);
 	}

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import * as Games from "../../../actions/Games";
-import * as Position from "../../../actions/Position"
 
 import { Deck } from "../../../staxpax/Deck";
 
@@ -17,12 +16,7 @@ class MVP extends Component {
 				Grid={ this.props.Grid }
 				SetGrid={ this.props.SetGrid }
 			>
-				<Broadcast
-					viewport={ this.props.ViewPort }
-					calcPos={ this.props.CalculatePosition }
-					deck-x={ 0 }
-					deck-y={ 0 }
-				/>
+				<Broadcast/>
 				{
 					!!this.props.ProximateGames ? this.props.ProximateGames.map((v, i) => {						
 						return (
@@ -46,15 +40,11 @@ class MVP extends Component {
 export default connect(
 	(state) => {
 		return {
-			Grid: state.Grid,
-			Position: state.Position,
 			ProximateGames: state.ProximateGames
 		};
 	},
 	(dispatch) => {
 		return {
-			SetGrid: (grid) => dispatch(Position.SetGrid(grid)),
-			MovePosition: (x, y) => dispatch(Position.MovePosition(x, y)),
 			GetProximateGamesRequest: (activity, lat, long, r) => dispatch(Games.GetProximateGamesRequest(activity, lat, long, r))
 		};
 	}
