@@ -6,6 +6,9 @@ import * as Games from "../../actions/Games";
 import { Result } from "../../components/deck/mvp/Result";
 
 class Search extends Component {
+	//TODO Move the "Time Remaining" timer off of the Result page and onto this container
+	//TODO Pass the updated details via props or child function call
+
 	componentDidMount() {
 		navigator.geolocation.watchPosition(this.GetLocation);
 	}
