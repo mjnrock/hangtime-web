@@ -11,6 +11,9 @@ class Search extends Component {
 	}
 
 	GetLocation(position) {
+		//TODO Call API from position
+		//TODO Add Location into State and have this compare that, if different, PUT an update to the API
+		//TODO Put a timeout on the API calls to prevent flooding
 		try {
 			console.log(position);
 		} catch(e) {}
