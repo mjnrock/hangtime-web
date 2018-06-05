@@ -6,6 +6,16 @@ import * as Games from "../../actions/Games";
 import { Result } from "../../components/deck/mvp/Result";
 
 class Search extends Component {
+	componentDidMount() {
+		navigator.geolocation.watchPosition(this.GetLocation);
+	}
+
+	GetLocation(position) {
+		try {
+			console.log(position);
+		} catch(e) {}
+	}
+
 	render() {
 		return (
 			<div>
