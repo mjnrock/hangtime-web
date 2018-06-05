@@ -1,3 +1,6 @@
+//	http://userinfo.io/
+//	https://stackoverflow.com/questions/391979/how-to-get-clients-ip-address-using-javascript-only
+
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";

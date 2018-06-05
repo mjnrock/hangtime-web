@@ -1,9 +1,11 @@
 import { put, call } from 'redux-saga/effects';
 
+import Config from "../config";
+
 import ActionType from "../../enums/ActionType";
 
 export async function FetchProximateGames(action) {
-    const response = await fetch(`http://localhost:3005/game/${action.payload.Activity}?p=${action.payload.Latitude}&l=${action.payload.Longitude}&r=${action.payload.Radius}`);
+    const response = await fetch(`http://${Config.Server}:${Config.Port}/game/${action.payload.Activity}?p=${action.payload.Latitude}&l=${action.payload.Longitude}&r=${action.payload.Radius}`);
     const json = await response.json();
 
     return await json;

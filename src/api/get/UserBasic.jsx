@@ -1,9 +1,11 @@
 import { put, call } from 'redux-saga/effects';
 
+import Config from "../config";
+
 import ActionType from "../../enums/ActionType";
 
 export async function FetchUserBasic(action) {
-    const response = await fetch(`http://localhost:3005/user/${action.payload}`);
+    const response = await fetch(`http://${Config.Server}:${Config.Port}/user/${action.payload}`);
     const json = await response.json();
 
     return await json;

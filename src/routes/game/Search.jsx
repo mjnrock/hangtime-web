@@ -9,17 +9,12 @@ class Search extends Component {
 	render() {
 		return (
 			<div>
-				<button
-					onClick={ () => this.props.GetProximateGamesRequest }
-				>
-					Refresh
-				</button>
 				{
 					!!this.props.ProximateGames ? this.props.ProximateGames.map((v, i) => {
 						return (
 							<Result
 								key={ i }
-								data={ this.props.ProximateGames }
+								data={ v }
 							/>
 						);
 					}) : "Loading..."

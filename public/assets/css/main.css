@@ -1,39 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Kanit:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 
+html {
+    background-image: url("../images/background-01.png");
+    background-size: cover;
+    mix-blend-mode: normal;
+}
 html,
 body,
 #root {
     font-family: Kanit;
 	height: 100%;
 	margin: 0;
-	overflow: hidden !important;
-	touch-action: none;
-}
-#root {
-    background-image: url("../images/background-01.png");
-    background-size: contain;
-    mix-blend-mode: normal;
 }
 
-.sp-viewer {
-	position: absolute;
-	width: 10000px;
-	height: 10000px;
+nav {
+	max-height: 64px;
+    width: calc(100% - 3px);
+    height: 64px;
+    margin-top: 3px;
+    position: relative;
+    top: 0;
+    display: inline-flex;
 }
+nav > * {
+    position: relative;
+	flex: 1 1 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
 
-.sp-deck {
-	position: absolute;
-	width: 100%;
-	height: 100%;
+    margin-left: 3px;
+	overflow: hidden;
+	background: rgba(231, 66, 50, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+	
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+	color: #FFFFFF;
+    text-decoration: none;
 }
-
-.sp-card {
-	position: absolute;
-    margin: 0;
-    padding: 0;
-}
-
-
 
 h1 {
     margin: 0;
@@ -50,9 +59,14 @@ h1 {
 }
 
 input,
-textarea {
+textarea,
+.text-generic {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
     min-height: 48px;
-    width: 100%;
+	width: 100%;
 
     font-family: Kanit;
     font-style: italic;
@@ -92,35 +106,53 @@ textarea:active {
     margin-top: 4px;
 }
 
-.card-header,
+.card {
+    margin: 0 auto;
+	width: calc(100% - 48px);
+	height: calc(100vh);
+}
+/* .card-header,
 .card-content,
 .card-footer {
-    margin: 0 auto;
-    width: calc(100% - 48px);
+} */
+.segment {
+	margin-top: 3px;
 }
 
 .bevel-bottom,
 .bevel-top {
     display: block;
-    margin: 0 auto;
-}
-.bevel-bottom {
+	margin: 0 auto;
+	
     width: 250px;
     height: 10px;
-    margin-top: -3px;
-
-}
-.bevel-top {
-
 }
 
 .panel {
-    background: rgba(255, 255, 255, 0.2);
-    mix-blend-mode: normal;
+	position: relative;
+	display: table;
+	width: 100%;
+	padding: 3px;
+	min-height: 85px;
+
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-sizing: border-box;
-    padding: 3px;
 }
+.panel-inner {
+	display: table-cell;
+	height: 100%;
+	width: 100%;
+	
+    background: rgba(255, 255, 255, 0.2);
+	mix-blend-mode: normal;
+}
+.panel-inner > * {
+	position: absolute;
+	top: calc(50% - 18px);
+	width: 100%;
+	text-align: center;
+}
+
 .panel-map {
     height: 225px;
     max-height: 225px;
@@ -139,7 +171,9 @@ textarea:active {
     z-index: 2;
     margin-bottom: 10px
 }
-.card-title > .icon-activity {
+
+
+.icon-activity {
     position: relative;
     z-index: 0;
     left: calc(50% - 40px);
@@ -252,7 +286,7 @@ textarea:active {
 
     color: #FFFFFF;
 }
-.broadcast-unit {
+.broadcast-label {
     position: absolute;
     bottom: 0;
 
@@ -268,4 +302,71 @@ textarea:active {
     top: -10px;
 
     font-size: 42px;
+}
+
+
+
+.metrics {
+	width: 100%;
+	position: relative;
+	display: inline-flex;
+
+	background: rgba(0, 0, 0, 0.5);
+	background-image: url("../images/metric-background-01.png");
+	box-shadow: inset 0px -0.5px 0px rgba(255, 255, 255, 0.1);
+}
+.metrics > .metric {
+	flex: 1 1 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+.metrics > .metric > .value {
+	font-weight: 600;
+	font-size: 24px;
+	text-align: center;
+	text-transform: uppercase;
+	
+	color: #FFFFFF;
+	text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 1px 0px #000000;
+}
+.metrics > .metric > .label {
+	font-weight: 500;
+	font-size: 12px;
+	text-align: center;
+	text-transform: uppercase;
+
+	color: #FFFFFF;
+	opacity: 0.5;
+}
+
+.tags {
+    position: relative;
+    display: inline-flex;
+    width: 100%;;
+	height: 48px;
+
+	background: rgba(86, 204, 242, 0.4);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	box-sizing: border-box;
+}
+.tags > .tag {
+	display: flex;
+	flex: 1 0 auto;
+	justify-content: center;
+	flex-direction: column;
+	line-height: 100%;
+
+	text-align: center;
+	font-weight: 600;
+	font-size: 18px;
+	text-transform: uppercase;
+
+	border-left: 2px solid rgba(0, 0, 0, 0.1);
+	color: #FFFFFF;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.tags > .tag:first-child {
+	border-left: none;
 }
