@@ -1,16 +1,19 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export class BroadcastBar extends Component {
 	render() {		
 		return (
 			<div className="broadcast">
 				<button>
-					<span className="broadcast-value broadcast-remaining">
-						59:59
-					</span>
-					<span className="broadcast-label o-70">
-						Remaining
-					</span>
+					<Link to='/host' className="button-link">
+						<span className="broadcast-value broadcast-remaining">
+							59:59
+						</span>
+						<span className="broadcast-label o-70">
+							Remaining
+						</span>
+					</Link>
 				</button>
 				
 				<button>
