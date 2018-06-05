@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 export class Broadcast extends Component {
+
 	render() {		
 		return (
 			<div className="card">

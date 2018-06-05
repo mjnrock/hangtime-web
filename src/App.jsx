@@ -21,6 +21,15 @@ class App extends Component {
 		);
 	}
 
+	updateLoggedInState(response) {
+		console.log("Logged In");
+		console.log(response);
+	}
+
+	updateLoggedOutState() {
+		console.log("Logged Out");
+	}
+
 	render() {
 		return (
 			<BrowserRouter>
@@ -32,7 +41,6 @@ class App extends Component {
 						<Route path="/host/" component={ Routes.Game.Host } />
 						<Route path="/search/nearby/:code?" component={ Routes.Game.Search } />
 					</Switch>
-					
 					<MVP.BroadcastBar />
 				</div>
 			</BrowserRouter>
