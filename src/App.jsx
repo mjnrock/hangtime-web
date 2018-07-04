@@ -1,15 +1,8 @@
-//	http://userinfo.io/
-//	https://stackoverflow.com/questions/391979/how-to-get-clients-ip-address-using-javascript-only
-
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import * as User from "./actions/User";
-import * as Games from "./actions/Games";
-
 import Routes from "./routes/package";
-import MVP from "./components/deck/mvp/package";
 
 class App extends Component {
 	componentDidMount() {
@@ -21,27 +14,15 @@ class App extends Component {
 		);
 	}
 
-	updateLoggedInState(response) {
-		console.log("Logged In");
-		console.log(response);
-	}
-
-	updateLoggedOutState() {
-		console.log("Logged Out");
-	}
-
 	render() {
 		return (
 			<BrowserRouter>
-				<div>
-					<MVP.NavBar />
-					
+				<div>					
 					<Switch>
-						<Route exact path="/" component={ Routes.Game.Host  } />
+						<Route exact path="/" component={ Routes.Game.Host } />
 						<Route path="/host/" component={ Routes.Game.Host } />
 						<Route path="/search/nearby/:code?" component={ Routes.Game.Search } />
 					</Switch>
-					<MVP.BroadcastBar />
 				</div>
 			</BrowserRouter>
 		);
