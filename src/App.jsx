@@ -1,27 +1,21 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+// import Hangtime from "./components/package";
 
 import Routes from "./routes/package";
 
 class App extends Component {
-	componentDidMount() {
-		this.props.GetProfileRequest("mrfancypants");
-		this.props.GetProximateGamesRequest(
-			"basketball",
-			42.2411,
-			-83.6130
-		);
-	}
-
 	render() {
 		return (
 			<BrowserRouter>
 				<div>					
 					<Switch>
-						<Route exact path="/" component={ Routes.Game.Host } />
-						<Route path="/host/" component={ Routes.Game.Host } />
-						<Route path="/search/nearby/:code?" component={ Routes.Game.Search } />
+						<Route exact path="/" component={ Routes.Feed } />
+						<Route path="/feed/:id" component={ Routes.Feed } />
+			 			{/* <Route path="/host/" component={ Routes.Game.Host } />
+			 			<Route path="/search/nearby/:code?" component={ Routes.Game.Search } /> */}
 					</Switch>
 				</div>
 			</BrowserRouter>
@@ -29,17 +23,16 @@ class App extends Component {
 	}
 }
 
-export default connect(
-	(state) => {
-		return {
-			Profile: state.Profile,
-			ProximateGames: state.ProximateGames
-		};
-	},
-	(dispatch) => {
-		return {
-			GetProfileRequest: (username) => dispatch(User.GetProfileRequest(username)),
-			GetProximateGamesRequest: (activity, lat, long, r) => dispatch(Games.GetProximateGamesRequest(activity, lat, long, r))
-		};
-	}
-)(App);
+export default App;
+// export default connect(
+// 	(state) => {
+// 		return {
+// 			FeedMessages: state.FeedMessages
+// 		};
+// 	},
+// 	(dispatch) => {
+// 		return {
+// 			GetFeedMessagesRequest: (feed) => dispatch(Feed.GetFeedMessagesRequest(feed))
+// 		};
+// 	}
+// )(App);

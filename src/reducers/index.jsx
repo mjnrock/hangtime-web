@@ -1,11 +1,9 @@
 import { combineReducers } from "redux";
 
-import { GetProfile } from "./User";
-import { GetProximateGames } from "./Games";
+import { GetFeedMessages } from './Feed';
 
 export default function RootReducer() {
 	return combineReducers({
-		Profile: GetProfile,
-		ProximateGames: GetProximateGames
+		FeedMessages: GetFeedMessages
 	});
 }
