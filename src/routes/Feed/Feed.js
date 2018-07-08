@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as ActionsFeed from "../../actions/Feed";
 
 import { PostContainer } from './../../components/Feed/PostContainer';
-import { PostBar } from './../../components/Feed/PostBar';
+import PostBar from './../../components/Feed/PostBar';
 
 class Feed extends Component {
 	componentDidMount() {

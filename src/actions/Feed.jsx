@@ -6,3 +6,14 @@ export function GetFeedMessagesRequest(id) {
 		payload: id
 	};
 }
+
+
+export function PostFeedMessageRequest(id, message) {
+	return {
+		type: ActionType.POST_FEED_MESSAGE_REQUEST,
+		payload: {
+			ID: id,
+			Message: message
+		}
+	};
+}
