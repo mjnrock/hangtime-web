@@ -7,6 +7,13 @@ export function GetFeedMessagesRequest(id) {
 	};
 }
 
+export function ReceiveFeedMessage(message) {
+	return {
+		type: ActionType.RECEIVE_FEED_MESSAGE,
+		payload: message
+	};
+}
+
 
 export function PostFeedMessageRequest(id, message) {
 	return {
