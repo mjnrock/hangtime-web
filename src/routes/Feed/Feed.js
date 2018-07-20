@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 
-import Main from "../Main";
+import { InitializeFeedMessage } from './../../ws/message/InitializeFeedMessage';
 
-export default class Feed extends Component {
-	componentDidMount() {
-		this.setState({
-			a: 1
-		});
-	}
-
+class Feed extends Component {
 	render() {
+		if(this.props.Feed.length === 0) {
+			return (
+				<button onClick={ () => this.props.WebSocketHelper.Send(new InitializeFeedMessage(1)) }>Load Feed</button>
+			);
+		}
+
 		return (
 			<div>
-				<Main />
+				{
+					this.props.Feed.map((v, i) => (
+						<div key={ i }>
+							<span className="post-author">{ v.Values.Author }:&nbsp;</span><span className="post-payload">{ v.Values.Payload }</span>
+						</div>
+					))
+				}
 			</div>
 		);
 	}
 }
+
+export default connect(
+	(state) => {
+		return {
+			Feed: state.Feed
+		};
+	},
+	null
+)(Feed);

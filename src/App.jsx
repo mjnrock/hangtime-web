@@ -1,29 +1,34 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Routes from "./routes/package";
-import WebSocketHelper from "./ws";
+import WebSocketHelper from "./ws/WebSocketHelper";
 
-export default class App extends Component {
-	constructor() {
-		super();
-		this.WebSocket = new WebSocketHelper(this);
+import { CreateFeed } from "./actions/Feed";
+
+class App extends Component {
+	componentWillMount() {
+		this.WebSocketHelper = new WebSocketHelper(this.props);
 	}
 
 	OnMessage(payload) {
-		console.log(payload);
 		if(payload !== void 0 && payload !== null) {
-			// this.props.ReceiveFeedMessage(payload);
-			console.log(this);
+			//TODO Bring back the MessageManager and load like the WebSocketHelper above
+			//TODO Use Actions/Reducers to send the server-return payload to the State, so components can connect to it
+			
+			//TODO Maybe rename messages that intend to be WebSocket messages, maybe Common/Client
+			//TODO Use Actions/Reducers for internal messages
+			return payload;
 		}
 	}
 
 	render() {
 		return (
 			<BrowserRouter>
-				<div>					
+				<div>
 					<Switch>
-						<Route exact path="/" component={ Routes.Feed } />
+						<Route exact path="/" render={ (props) => <Routes.Feed WebSocketHelper={ this.WebSocketHelper } /> } />
 						<Route path="/feed/:id" component={ Routes.Feed } />
 					</Switch>
 				</div>
@@ -31,3 +36,12 @@ export default class App extends Component {
 		);
 	}
 }
+
+export default connect(
+	null,
+	(dispatch) => {
+		return {
+			CreateFeed: (feed) => dispatch(CreateFeed(feed))
+		};
+	}
+)(App);

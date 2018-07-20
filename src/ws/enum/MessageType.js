@@ -1,0 +1,3 @@
+export default {
+	INITIALIZE_FEED: "INITIALIZE_FEED"
+};
