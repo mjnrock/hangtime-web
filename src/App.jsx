@@ -12,17 +12,6 @@ class App extends Component {
 		this.WebSocketHelper = new WebSocketHelper(this.props);
 	}
 
-	OnMessage(payload) {
-		if(payload !== void 0 && payload !== null) {
-			//TODO Bring back the MessageManager and load like the WebSocketHelper above
-			//TODO Use Actions/Reducers to send the server-return payload to the State, so components can connect to it
-			
-			//TODO Maybe rename messages that intend to be WebSocket messages, maybe Common/Client
-			//TODO Use Actions/Reducers for internal messages
-			return payload;
-		}
-	}
-
 	render() {
 		return (
 			<BrowserRouter>
