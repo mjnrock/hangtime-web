@@ -31,7 +31,7 @@ class Feed extends Component {
 			);
 		}
 
-		//TODO This currently does not display the "newline" character added by Shift+Enter, also some might not be added properly (e.g. API says two were added, but JS .replace only replaced 1, so, investigae, I guess)
+		//TODO This currently does not display the "newline" character added by Shift+Enter
 		return (
 			<div>
 				{
