@@ -6,7 +6,6 @@ import { WriteFeedMessage } from './../../ws/message/WriteFeedMessage';
 
 class Feed extends Component {
 	componentDidMount() {
-		console.log(this.props.WebSocketHelper);
 		this.props.WebSocketHelper.Send(new InitializeFeedMessage(1));
 	}
 
@@ -15,7 +14,7 @@ class Feed extends Component {
 	}
 
 	OnPostSubmit(e) {
-		if(e.key === "Enter") {
+		if(e.key === "Enter" && !e.shiftKey) {
 			e.preventDefault();
 
 			if(e.target.value.length >= 0) {
@@ -26,12 +25,13 @@ class Feed extends Component {
 	}
 
 	render() {
-		if(this.props.Feed.length === 0) {
+		if(this.props.Feed[0] === false) {
 			return (
 				<div>Loading...</div>
 			);
 		}
 
+		//TODO This currently does not display the "newline" character added by Shift+Enter, also some might not be added properly (e.g. API says two were added, but JS .replace only replaced 1, so, investigae, I guess)
 		return (
 			<div>
 				{
@@ -41,7 +41,7 @@ class Feed extends Component {
 						</div>
 					))
 				}
-				<textarea onKeyDown={ (e) => this.OnPostSubmit(e) }></textarea>
+				<textarea onKeyDown={ (e) => this.OnPostSubmit(e) } placeholder="Enter a message..."></textarea>
 			</div>
 		);
 	}
