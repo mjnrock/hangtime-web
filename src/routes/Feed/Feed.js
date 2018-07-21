@@ -2,12 +2,33 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 
 import { InitializeFeedMessage } from './../../ws/message/InitializeFeedMessage';
+import { WriteFeedMessage } from './../../ws/message/WriteFeedMessage';
 
 class Feed extends Component {
+	componentDidMount() {
+		console.log(this.props.WebSocketHelper);
+		this.props.WebSocketHelper.Send(new InitializeFeedMessage(1));
+	}
+
+	componentDidUpdate() {
+		console.log(this);
+	}
+
+	OnPostSubmit(e) {
+		if(e.key === "Enter") {
+			e.preventDefault();
+
+			if(e.target.value.length >= 0) {
+				this.props.WebSocketHelper.Send(new WriteFeedMessage(1, "ReactAuthor", e.target.value));
+				e.target.value = "";
+			}
+		}
+	}
+
 	render() {
 		if(this.props.Feed.length === 0) {
 			return (
-				<button onClick={ () => this.props.WebSocketHelper.Send(new InitializeFeedMessage(1)) }>Load Feed</button>
+				<div>Loading...</div>
 			);
 		}
 
@@ -20,6 +41,7 @@ class Feed extends Component {
 						</div>
 					))
 				}
+				<textarea onKeyDown={ (e) => this.OnPostSubmit(e) }></textarea>
 			</div>
 		);
 	}

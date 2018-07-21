@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import Routes from "./routes/package";
 import WebSocketHelper from "./ws/WebSocketHelper";
 
-import { CreateFeed } from "./actions/Feed";
+import { CreateFeed, AddFeedPost } from "./actions/Feed";
 
 class App extends Component {
 	componentWillMount() {
@@ -30,7 +30,8 @@ export default connect(
 	null,
 	(dispatch) => {
 		return {
-			CreateFeed: (feed) => dispatch(CreateFeed(feed))
+			CreateFeed: (feed) => dispatch(CreateFeed(feed)),
+			AddFeedPost: (post) => dispatch(AddFeedPost(post))
 		};
 	}
 )(App);

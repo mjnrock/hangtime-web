@@ -13,6 +13,9 @@ export default class MessageManager {
 				case MessageType.INITIALIZE_FEED:
 					this.Dispatchers.CreateFeed(message.Payload);
 					break;
+				case MessageType.WRITE_POST_MESSAGE:
+					this.Dispatchers.AddFeedPost(message.Payload);
+					break;
 				default:
 					break;
 			}

@@ -11,15 +11,33 @@ class WebSocketHelper {
 		this.ws.onclose = (e) => this.OnClose(e);
 	}
 
+	ConnectionWrapper(socket, callback) {
+		let timeout = 250;
+
+		setTimeout(() => {
+			if(socket.readyState === 1) {
+				if(typeof callback === "function") {
+					callback();
+				}
+			} else {
+				this.ConnectionWrapper(socket, callback);
+			}
+		}, timeout);
+	}
+
 	Send(message) {
 		console.log("Sending message to the server...");
 		try {
-			this.ws.send(
-				JSON.stringify(message)
+			this.ConnectionWrapper(this.ws, () =>
+				this.ws.send(
+					JSON.stringify(message)
+				)
 			);
 
 			return true;
 		} catch (e) {
+			console.log("WSH.Send() Failed");
+
 			return false;
 		}
 	}
