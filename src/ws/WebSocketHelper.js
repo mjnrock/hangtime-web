@@ -36,8 +36,6 @@ class WebSocketHelper {
 
 			return true;
 		} catch (e) {
-			console.log("WSH.Send() Failed");
-
 			return false;
 		}
 	}
